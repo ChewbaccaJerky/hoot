@@ -5,10 +5,10 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 15px;
-
+  padding: 10px;
+  background-color: $primary-color;
   h1 {
-    color: orange;
+    color: #FFF;
     font-size: 25px;
     font-weight: bold;
   }

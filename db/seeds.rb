@@ -14,4 +14,13 @@ user1 = {
   last_name: "Lugtu"
 }
 
+demo = {
+  username: "demo",
+  pasword: "password",
+  email: "demo@test.com",
+  first_name: "Chuck",
+  last_name: "Norris"
+}
+
 User.create(user1)
+User.create(demo)

@@ -3,14 +3,14 @@ import SessionFormContainer from './session_form/session_form_container';
 import NavBarContainer from './navbar/navbar_container';
 import Footer from './footer/footer';
 import { Route } from 'react-router';
+import { AuthRoute } from '../util/route_util';
 
 const App = () => (
   <div>
     <NavBarContainer />
-
     <div className="main-page">
-      <Route path="/login" component={SessionFormContainer} />
-      <Route path="/signup" component={SessionFormContainer} />
+      <AuthRoute path="/login" component={SessionFormContainer} />
+      <AuthRoute path="/signup" component={SessionFormContainer} />
     </div>
 
     <Footer />
