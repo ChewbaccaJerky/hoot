@@ -10,7 +10,7 @@ import configureStore from './store/store.js';
 document.addEventListener('DOMContentLoaded', ()=>{
   let root = document.getElementById('root');
   let store;
-  
+
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser } };
     store = configureStore(preloadedState);
@@ -21,6 +21,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-
+  window.logout = logout();
   ReactDOM.render(<Root store={store}/>, root);
 });

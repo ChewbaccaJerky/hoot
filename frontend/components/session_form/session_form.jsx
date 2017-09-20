@@ -18,6 +18,7 @@ class SessionForm extends React.Component {
                   }
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   update(field) {
@@ -34,28 +35,52 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
+  demoLogin(e) {
+    e.preventDefault;
+    let user = { username: "Demo", password: "password"};
+    this.props.processForm({user: user});
+  }
+
   loginForm() {
     return (
-      <div class="form">
-        <form onSubmit={this.handleSubmit}>
+        <form>
+          <h1>Log In</h1>
           <input type="text"
                  placeholder="Username"
                  value={this.state.username}
                  onChange={this.update('username')}/>
+
           <input type="password"
                  placeholder="Password"
                  value={this.state.password}
                  onChange={this.update('password')}/>
-          <button type="submit">Log In</button>
+
+          <div className="login-btns">
+            <button type="submit" onClick={this.handleSubmit}>Log In</button>
+            <button onClick={this.demoLogin}>Demo</button>
+          </div>
+
         </form>
-      </div>
     );
   }
 
   signupForm() {
     return (
-      <div class="form">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="col-4">
+          <h1>Sign Up</h1>
+
+          <div className="name">
+            <input type="text"
+                   placeholder="First Name"
+                   value={this.state.first_name}
+                   onChange={this.update('first_name')}/>
+
+            <input type="text"
+                   placeholder="Last Name"
+                   value={this.state.last_name}
+                   onChange={this.update('last_name')}/>
+          </div>
+
           <input type="text"
                  placeholder="Username"
                  value={this.state.username}
@@ -71,19 +96,8 @@ class SessionForm extends React.Component {
                  value={this.state.email}
                  onChange={this.update('email')}/>
 
-          <input type="text"
-                 placeholder="First Name"
-                 value={this.state.first_name}
-                 onChange={this.update('first_name')}/>
-
-          <input type="text"
-                 placeholder="Last Name"
-                 value={this.state.last_name}
-                 onChange={this.update('last_name')}/>
-
           <button type="submit">Sign Up</button>
         </form>
-      </div>
     );
   }
 

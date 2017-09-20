@@ -1,0 +1,45 @@
+@import "./variables";
+
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px;
+
+  h1 {
+    color: orange;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .nav-left {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    h2 {
+      color: #000;
+      font-size: 20px;
+      border-bottom: 1px solid orange;
+      margin: 0 10px;
+    }
+
+    button {
+      color: $primary-color;
+      font-size: 10px;
+      font-weight: bold;
+      background-color: #FFF;
+      border: 1px solid $primary-color;
+      border-radius: 5px;
+      margin: 0 5px;
+      padding: 10px;
+      transition: background-color 1s;
+
+      &:hover {
+        background-color: $primary-color;
+        color: #FFF;
+      }
+    }
+
+  }
+}

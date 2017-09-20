@@ -34,7 +34,7 @@ export const login = (user) => dispatch => (
 );
 
 export const logout = () => dispatch => (
-  SessionApiUtil.destroySession
+  SessionApiUtil.destroySession()
     .then(user => (dispatch(receiveCurrentUser(null))
     ), err => dispatch(receiveErrors(err)))
 );
