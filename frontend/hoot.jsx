@@ -9,9 +9,15 @@ import configureStore from './store/store.js';
 
 document.addEventListener('DOMContentLoaded', ()=>{
   let root = document.getElementById('root');
-
-
-  let store = configureStore();
+  let store;
+  
+  if (window.currentUser) {
+    const preloadedState = { session: { currentUser: window.currentUser } };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;

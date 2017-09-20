@@ -1,0 +1,12 @@
+$image-url: "https://images.pexels.com/photos/239975/pexels-photo-239975.jpeg?w=940&h=650&auto=compress&cs=tinysrgb";
+.form-container {
+  height: inherit;
+  display: flex;
+  background: url($image-url) no-repeat bottom;
+  background-size: cover;
+
+  .form {
+    width: 33.33%;
+    z-index: 100;
+  }
+}
