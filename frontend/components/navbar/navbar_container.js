@@ -6,8 +6,8 @@ import NavBar from './navbar';
 const mapStateToProps = (state, ownProps) => {
   let path = ownProps.location.pathname;
   return {
-    loggedIn: Boolean(state.session.currentUser),
-    currentUser: state.session.currentUser,
+    loggedIn: Boolean(state.entities.session.currentUser),
+    currentUser: state.entities.session.currentUser,
     path: path
   };
 };

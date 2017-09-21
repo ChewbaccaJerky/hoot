@@ -18,10 +18,13 @@ class Api::BusinessesController < ApplicationController
     response = RestClient.get url, {params: { key: ENV["google_api_key"],
                                               placeid: place_id }}
 
-    @business = JSON.parse(response)["result"]
+    response = JSON.parse(response)
 
-    render '/api/businesses/show'
-    # render json: response
+    if response["status"] == "INVALID_REQUEST"
+      render json: ["Invalid Request"], status: 404
+    else
+      @business = response["result"]
+      render '/api/businesses/show'
+    end
   end
-
 end
