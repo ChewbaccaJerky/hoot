@@ -11,7 +11,7 @@ const BusinessReducer = (oldState = {}, action) => {
       return action.businesses
 
     case RECEIVE_BUSINESS:
-      newState[action.business.placeId] = action.business
+      newState[action.business.place_id] = action.business
       return newState;
 
     default:
