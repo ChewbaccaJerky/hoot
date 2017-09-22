@@ -74,10 +74,11 @@ class SessionForm extends React.Component {
 
   signupForm() {
     let err = {};
+    
     if(this.props.errors.responseJSON) {
       err = this.handleErrors(this.props.errors.responseJSON);
-      console.log(err);
     }
+
     return (
         <form onSubmit={this.handleSubmit} className="col-4">
           <h1>Sign Up</h1>

@@ -18,17 +18,26 @@ const greeting = (currentUser, logout) => (
 );
 
 
-const NavBar = ({currentUser, logout, path}) => {
+const homepage = (currentUser, logout) => {
   let info = currentUser ? greeting(currentUser, logout) : sessionLinks();
   return (
-    <div className="navbar-container">
-      <div className="jumbotron">
-        <div className="links-container">
-          { info }
-        </div>
-        <h1 id="logo">Hoot</h1>
-        <p>Johnny's Grill Photo By Diane Mariel</p>
+    <div className="jumbotron">
+      <div className="links-container">
+        { info }
       </div>
+      <h1 id="logo">Hoot</h1>
+      <p>Johnny's Grill Photo By Diane Mariel</p>
+    </div>
+  );
+};
+
+const NavBar = ({currentUser, logout, path}) => {
+
+  let content = path === "/" ? homepage(currentUser, logout) : "fails...";
+
+  return (
+    <div className="navbar-container">
+      { content }
     </div>
   );
 };

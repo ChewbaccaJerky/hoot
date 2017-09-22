@@ -5,7 +5,7 @@ class Api::BusinessesController < ApplicationController
     url = "https://maps.googleapis.com/maps/api/place/textsearch/json?"
 
     response = RestClient.get url, {params: { key: ENV["google_api_key"],
-                                              query: "Restaurants in San Francisco", }}
+                                              query: "Restaurants in San Francisco"}}
 
     @businesses = JSON.parse(response)["results"]
 
