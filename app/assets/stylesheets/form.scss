@@ -7,11 +7,11 @@
   align-items: center;
   background: url($image-url) no-repeat bottom;
   background-size: cover;
-  
+
   form {
     display: flex;
     flex-direction: column;
-    width: 33.33%;
+    width: 50%;
     background-color: rgba(250,250,250, 0.7);
     border-radius: 10px;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
@@ -20,6 +20,12 @@
     h1 {
       font-weight: bold;
       font-size: 30px;
+    }
+
+    .errors {
+      color: red;
+      margin: 0.2em;
+      font-size: 0.9em;
     }
 
     input {
@@ -40,7 +46,10 @@
       padding: 0;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+
+      input {
+        width: 100%;
+      }
     }
 
     .login-btns {

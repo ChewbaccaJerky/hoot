@@ -1,28 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const sessionLinks = (path) => {
-  path = path === "/login" ? "/signup" : "/login";
-  let text = path === "/login" ? "Log In" : "Sign Up";
+const sessionLinks = () => {
   return (
-    <div className="nav-left">
-      <button><Link to={path}>{text}</Link></button>
+    <div className="session-links">
+      <Link to="/login"><button>Log In</button></Link>
+      <Link to="/signup"><button>Sign Up</button></Link>
     </div>
   );
 };
 
 const greeting = (currentUser, logout) => (
-  <div className="nav-left">
+  <div className="session-links">
     <h2> { currentUser.username } </h2>
     <button onClick={logout}> Log Out </button>
   </div>
 );
 
+
 const NavBar = ({currentUser, logout, path}) => {
-  let info = currentUser ? greeting(currentUser, logout) : sessionLinks(path);
+  let info = currentUser ? greeting(currentUser, logout) : sessionLinks();
   return (
-    <div className="navbar">
-      <h1>Hoot</h1>
+    <div className="navbar-container">
+      <div className="jumbotron">
+        <div className="links-container">
+          { info }
+        </div>
+        <h1 id="logo">Hoot</h1>
+        <p>Johnny's Grill Photo By Diane Mariel</p>
+      </div>
     </div>
   );
 };

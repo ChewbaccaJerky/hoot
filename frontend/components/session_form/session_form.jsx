@@ -42,9 +42,17 @@ class SessionForm extends React.Component {
   }
 
   loginForm() {
+    let errors = "";
+
+    if(this.props.errors.responseJSON) {
+      let err = this.props.errors.responseJSON[0];
+      errors = (<h3 className="errors"> {err} </h3>)
+    }
+
     return (
         <form>
           <h1>Log In</h1>
+          {errors}
           <input type="text"
                  placeholder="Username"
                  value={this.state.username}
@@ -65,47 +73,80 @@ class SessionForm extends React.Component {
   }
 
   signupForm() {
+    let err = {};
+    if(this.props.errors.responseJSON) {
+      err = this.handleErrors(this.props.errors.responseJSON);
+      console.log(err);
+    }
     return (
         <form onSubmit={this.handleSubmit} className="col-4">
           <h1>Sign Up</h1>
 
           <div className="name">
             <input type="text"
-                   placeholder="First Name"
+                   placeholder={ err["first_name"] ? err["first_name"] : "First Name"}
                    value={this.state.first_name}
                    onChange={this.update('first_name')}/>
 
             <input type="text"
-                   placeholder="Last Name"
+                   placeholder={ err["last_name"] ? err["last_name"] : "Last Name"}
                    value={this.state.last_name}
                    onChange={this.update('last_name')}/>
           </div>
 
           <input type="text"
-                 placeholder="Username"
+                 placeholder={ err["username"] ? err["username"] : "Username"}
                  value={this.state.username}
                  onChange={this.update('username')}/>
 
+         <input type="text"
+                placeholder={ err["email"] ? err["email"] : "Email"}
+                value={this.state.email}
+                onChange={this.update('email')}/>
+
           <input type="password"
-                 placeholder="Password"
+                 placeholder={ err["password"] ? err["password"] : "Password"}
                  value={this.state.password}
                  onChange={this.update('password')}/>
 
-          <input type="text"
-                 placeholder="Email"
-                 value={this.state.email}
-                 onChange={this.update('email')}/>
 
           <button type="submit">Sign Up</button>
         </form>
     );
   }
 
+  handleErrors(errsArray) {
+    let errorsHash = {};
+    let errorStr = ""
+    for (var i = 0; i < errsArray.length; i++) {
+      errorStr = errsArray[i];
+
+      switch(true) {
+        case /First/.test(errorStr):
+          errorsHash["first_name"] = errorStr;
+          break;
+        case /Last/.test(errorStr):
+          errorsHash["last_name"] = errorStr;
+          break;
+        case /Username/.test(errorStr):
+          errorsHash["username"] = errorStr;
+          break;
+        case /Password/.test(errorStr):
+          errorsHash["password"] = errorStr;
+          break;
+        case /Email/.test(errorStr):
+          errorsHash["email"] = errorStr;
+          break;
+      }
+    }
+    return errorsHash;
+  }
+
   render() {
     let form = this.props.formType === "login" ? this.loginForm() : this.signupForm();
     return (
       <div className="form-container">
-          {form}
+        {form}
       </div>
     );
   }
