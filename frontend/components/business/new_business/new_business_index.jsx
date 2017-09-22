@@ -16,7 +16,6 @@ class NewBusinessIndex extends React.Component {
       <NewBusinessItem key={biz.place_id} biz={biz} />
     ));
 
-    console.log(content);
     return (
       <div className="new-business-container">
         { content }
