@@ -23,10 +23,8 @@ const NavBar = ({currentUser, logout, path}) => {
   return (
     <div className="navbar">
       <h1>Hoot</h1>
-      {info}
     </div>
   );
 };
-
 
 export default NavBar;

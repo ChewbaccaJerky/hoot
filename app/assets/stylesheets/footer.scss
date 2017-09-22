@@ -1,11 +1,9 @@
 @import "./variables.scss";
 .footer {
   height: 80px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-  align-self: flex-end;
   background-color: $footer-color;
 
   a {

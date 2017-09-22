@@ -9,7 +9,8 @@ class Api::BusinessesController < ApplicationController
 
     @businesses = JSON.parse(response)["results"]
 
-    render '/api/businesses/index'
+    # render '/api/businesses/index'
+    render json: response
   end
 
   def show

@@ -10,8 +10,8 @@ const mapStateToProps = (state, ownProps) => {
   }
 
   return {
-    loggedIn: Boolean(state.session.currentUser),
-    errors: state.errors.session,
+    loggedIn: Boolean(state.entities.session.currentUser),
+    errors: state.entities.errors.session,
     formType
   }
 };
