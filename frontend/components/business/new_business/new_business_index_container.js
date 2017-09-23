@@ -6,7 +6,8 @@ import { fetchBusinesses, fetchBusiness } from '../../../actions/business_action
 const mapStateToProps = state => {
   let topThree = [Object.values(state.entities.businesses).slice(0,3)][0]
   return {
-    new_businesses: topThree
+    new_businesses: topThree,
+    image_key: state.ui.image
   };
 };
 

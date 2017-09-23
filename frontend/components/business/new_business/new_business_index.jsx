@@ -13,7 +13,7 @@ class NewBusinessIndex extends React.Component {
 
   render() {
     let content = this.props.new_businesses.map((biz) => (
-      <NewBusinessItem key={biz.place_id} biz={biz} />
+      <NewBusinessItem key={biz.place_id} biz={biz} image_key={this.props.image_key}/>
     ));
 
     return (

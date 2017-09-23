@@ -1,11 +1,11 @@
 import React from 'react';
 
-const NewBusinessItem = ({biz}) => {
+const NewBusinessItem = ({biz, image_key}) => {
   let url = "https://maps.googleapis.com/maps/api/place/photo?";
-  let key = "";
+  console.log(image_key);
   return (
     <div className="newBusinessItem">
-
+      <img src={`${url}maxwidth=400&photoreference=${biz.photo_reference}&key=${image_key}`} alt={biz.name} />
       <h1>{biz.name}</h1>
       <h3>{biz.types}</h3>
       <h3>{biz.address}</h3>
