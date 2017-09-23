@@ -14,7 +14,7 @@ const App = () => (
       <Route path="/login" component ={Header} />
 
     <div className="main-page">
-        <Route path="/" component={NewBusinessIndexContainer}/>
+        <Route exact path="/" component={NewBusinessIndexContainer}/>
         <AuthRoute path="/login" component={SessionFormContainer} />
         <AuthRoute path="/signup" component={SessionFormContainer} />
     </div>

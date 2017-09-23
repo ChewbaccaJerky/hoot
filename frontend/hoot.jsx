@@ -17,9 +17,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
   // Preload Businesses to Initial Page
   BizAPIUtil.fetchBusinesses().then(businesses => {
     if (window.currentUser) {
-      const preloadedState = {entities:{
-        businesses: businesses,
-        session: { currentUser: window.currentUser } } };
+      const preloadedState = {
+        entities:{
+          businesses: businesses,
+          session: { currentUser: window.currentUser }
+        },
+      };
       store = configureStore(preloadedState);
       delete window.currentUser;
     } else {

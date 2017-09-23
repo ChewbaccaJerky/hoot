@@ -1,5 +1,22 @@
 @import "./variables";
 
+.button {
+  padding: 10px;
+
+  font-size: 15px;
+
+  background-color: transparent;
+  color: #FFF;
+  border-radius: 5px;
+
+  transition: background-color 1s, color 1s;
+
+  &:hover {
+    background-color: $primary-color;
+    color: #FFF;
+  }
+}
+
 
 .navbar-container {
   display: flex;
@@ -24,28 +41,20 @@
 
         h2 {
           margin: 0 15px;
-          font-size: 20px;
-          color: $primary-color;
+          font-size: 25px;
+          color: #FFF;
+          border-bottom: 2px solid $primary-color;
+        }
+
+        button {
+          @extend .button
         }
 
         a {
           margin: 0 10px;
+
           button {
-          padding: 10px;
-
-          font-size: 15px;
-
-          background-color: transparent;
-          color: #FFF;
-          border-radius: 5px;
-
-          transition: background-color 1s, color 1s;
-
-          &:hover {
-            background-color: $primary-color;
-            color: #FFF;
-          }
-
+            @extend .button
           }
         }
       }
