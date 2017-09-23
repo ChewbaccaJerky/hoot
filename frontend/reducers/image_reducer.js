@@ -1,6 +1,6 @@
 // Key holder
 
-let nullState = "AIzaSyDrjh-m2T9TiRjQBW1KeA6fXcx6hoIxxy4";
+let nullState = "AIzaSyAwBuCeQEcarQNOUY8c9qztNejHl17RmM0";
 
 const ImageReducer = (oldState = nullState, action) => {
   Object.freeze(oldState);

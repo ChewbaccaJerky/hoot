@@ -22,11 +22,13 @@ const homepage = (currentUser, logout) => {
   let info = currentUser ? greeting(currentUser, logout) : sessionLinks();
   return (
     <div className="jumbotron">
-      <div className="links-container">
-        { info }
+      <div className="jumbotron-items" >
+        <div className="links-container">
+          { info }
+        </div>
+        <h1 id="logo">Hoot</h1>
+        <p>Johnny's Grill Photo By Diane Mariel</p>
       </div>
-      <h1 id="logo">Hoot</h1>
-      <p>Johnny's Grill Photo By Diane Mariel</p>
     </div>
   );
 };

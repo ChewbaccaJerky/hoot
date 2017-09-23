@@ -1,5 +1,5 @@
 import React from 'react';
-import NewBusinessItem from './new_business_item';
+import NewBusinessItem from './new_business_item.jsx';
 
 class NewBusinessIndex extends React.Component {
   constructor(props) {
@@ -18,7 +18,10 @@ class NewBusinessIndex extends React.Component {
 
     return (
       <div className="new-business-container">
-        { content }
+        <h1> Hot Businesses </h1>
+        <div className="new-businesses">
+          { content }
+        </div>
       </div>
     );
   }
