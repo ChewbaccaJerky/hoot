@@ -33,9 +33,33 @@ const homepage = (currentUser, logout) => {
   );
 };
 
+const businessPages = (currentUser, logout) => {
+  let info = currentUser ? greeting(currentUser, logout) : sessionLinks();
+
+  return (
+    <div className="navbar">
+      <div className="navbar-top">
+        <h1 id="logo"> Hoot </h1>
+        <div className="SearchBar">
+          <h1>SearchBar............................</h1>
+        </div>
+        { info }
+      </div>
+
+      <div className="navbar-bottom">
+        <ul>
+          <li><a href='/'>Restaurants</a></li>
+          <li><a href='/'>Night Life</a></li>
+          <li><a href='/'>Write A Review</a></li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
 const NavBar = ({currentUser, logout, path}) => {
 
-  let content = path === "/" ? homepage(currentUser, logout) : "fails...";
+  let content = path === "/" ? homepage(currentUser, logout) : businessPages(currentUser, logout);
 
   return (
     <div className="navbar-container">

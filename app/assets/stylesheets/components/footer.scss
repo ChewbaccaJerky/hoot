@@ -1,14 +1,15 @@
 @import "./variables.scss";
+
 .footer {
-  height: 80px;
+  height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: $footer-color;
 
   a {
-    margin: 0 10px;
-    font-size: 15px;
+    margin: 0 1em;
+    font-size: 1em;
     color: #666;
 
     &:hover {

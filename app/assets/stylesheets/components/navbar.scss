@@ -16,7 +16,7 @@
   }
 }
 
-
+// HomePage
 .navbar-container {
   margin-bottom: 2em;
   display: flex;
@@ -77,6 +77,67 @@
 
     p {
       color: #FFF;
+    }
+  }
+}
+
+// Detail Page and Index Page
+.navbar {
+
+  .navbar-top {
+    background-color: $primary-color-light;
+    color: #FFF;
+    height: 5vh;
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    #logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    button {
+      margin: 0 0.5em;
+      padding: 10px;
+      font-size: 15px;
+
+      background-color: transparent;
+      color: #FFF;
+      border-radius: 5px;
+
+      transition: background-color 1s, color 1s;
+
+      &:hover {
+        background-color: #FFF;
+        color: $primary-color;
+      }
+    }
+  }
+
+  .navbar-bottom {
+    background-color: $primary-color;
+    padding: 0 10vw;
+    ul {
+      display: flex;
+      justify-content: flex-start;
+
+      li {
+        padding: 0 1em;
+        transition: background-color 1s;
+        a {
+          color: #FFF;
+        }
+
+        &:hover {
+          background-color: #FFF;
+
+          a {
+            color: $primary-color;
+          }
+        }
+      }
     }
   }
 }
