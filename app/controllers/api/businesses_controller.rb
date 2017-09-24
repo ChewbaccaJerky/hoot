@@ -25,6 +25,7 @@ class Api::BusinessesController < ApplicationController
     else
       @business = response["result"]
       render '/api/businesses/show'
+      # render json: @business
     end
   end
 end

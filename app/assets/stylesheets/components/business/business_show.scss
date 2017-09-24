@@ -1,0 +1,35 @@
+@import "../variables.scss";
+.business-show-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .business-show-header {
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 20vh;
+    border-bottom: 1px solid #E6E6E6;
+
+    div {
+      diplay: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: gray;
+      h1{
+        color: #000;
+        font-size: 3em;
+        font-weight: bold;
+      }
+    }
+
+    button {
+      background-color: $primary-color;
+      color: #FFF;
+      padding: 1em;
+      font-size: 1em;
+      box-shadow: 1px 1px 2px #888;
+    }
+  }
+}

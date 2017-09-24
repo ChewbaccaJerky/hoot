@@ -1,4 +1,5 @@
 import React from 'react';
+import BusinessCard from './business_card';
 import BusinessInfo from './business_info';
 import ImageCarousel from './image_carousel';
 
@@ -19,23 +20,30 @@ class BusinessShow extends React.Component {
 
   render() {
     let biz = {};
+    let price_level = "";
     if(this.props.business) {
       biz = this.props.business;
     }
+    if(biz.price_level) {
+      for (var i = 0; i < biz.price_level; i++) {
+        price_level += '$';
+      }
+    }
+
     return (
       <div className="business-show-container">
         <div className="business-show-header">
           <div>
             <h1>{biz.name}</h1>
-            <h3>Ratings....</h3>
-            <h3>{biz.price_level}.{biz.type}</h3>
+            <h3>Ratings Placeholder</h3>
+            <h3>{price_level}</h3>
           </div>
           <button>Write A Review</button>
         </div>
 
         <div className="features-container">
-          <div className="map"></div>
-          <div className="image-carousel"></div>
+          <BusinessCard biz={biz} />
+          <ImageCarousel photos={biz.photos} />
         </div>
 
         <div className="review-and-biz-info">

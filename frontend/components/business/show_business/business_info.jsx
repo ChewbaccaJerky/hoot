@@ -4,7 +4,7 @@ import BusinessDetailInfo from './business_detail_info';
 
 const BusinessInfo = ({biz}) => (
   <div className="business-info-container">
-    <BusinessCurrentInfo biz={biz} />
+    <BusinessCurrentInfo open_now={biz.open_now} price_level={biz.price_level}/>
     <BusinessDetailInfo biz={biz} />
   </div>
 );

@@ -5,3 +5,19 @@ $homepage-image: "https://static.pexels.com/photos/5317/food-salad-restaurant-pe
 $primary-color: rgb(255,165,0);
 $primary-color-light: rgba(255, 165, 0, 0.8);
 $footer-color: #F8F8F8;
+
+.button {
+  padding: 10px;
+  font-size: 15px;
+
+  background-color: transparent;
+  color: #FFF;
+  border-radius: 5px;
+
+  transition: background-color 1s, color 1s;
+
+  &:hover {
+    background-color: $primary-color;
+    color: #FFF;
+  }
+}
