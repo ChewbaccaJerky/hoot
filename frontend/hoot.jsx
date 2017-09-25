@@ -7,8 +7,8 @@ import configureStore from './store/store.js';
 import * as SeshUtil from './util/session_api_util';
 import * as BizAPIUtil from './util/business_api_util';
 import { login, logout, signup } from './actions/session_actions';
-import { fetchBusinesses, fetchBusiness } from './actions/business_actions';
-
+import { fetchBusinesses, fetchBusiness, searchAndfetchBusinesses } from './actions/business_actions';
+import { searchBusinesses } from './util/search_api_util';
 
 document.addEventListener('DOMContentLoaded', ()=>{
   let root = document.getElementById('root');
@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
     window.bizUtil = BizAPIUtil;
     window.fetchBusinesses = fetchBusinesses;
     window.fetchBusiness = fetchBusiness;
+    window.searchAndfetchBusinesses = searchAndfetchBusinesses;
+    window.searchBusinesses = searchBusinesses;
 
     ReactDOM.render(<Root store={store}/>, root);
   });

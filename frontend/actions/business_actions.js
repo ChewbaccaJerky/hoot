@@ -1,4 +1,5 @@
 import * as BizAPIUtil from '../util/business_api_util';
+import * as SearchAPIUtil from '../util/search_api_util';
 
 export const RECEIVE_BUSINESSES = "RECEIVE_BUSINESSES";
 export const RECEIVE_BUSINESS = "RECEIVE_BUSINESS";
@@ -29,4 +30,10 @@ export const fetchBusiness = (placeId) => dispatch => (
   BizAPIUtil.fetchBusiness(placeId).then( business => (
     dispatch(receiveBusiness(business)))
   ), err => dispatch(receiveBusinessErrors(err))
+);
+
+export const searchAndfetchBusinesses = (searchParams) => dispatch => (
+  SearchAPIUtil.searchBusinesses(searchParams).then( businesses => (
+    dispatch(receiveBusinesses(businesses)))
+  ), (err) => dispatch(receiveBusinessErrors(err))
 );
