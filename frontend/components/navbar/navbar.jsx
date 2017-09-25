@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchBarContainer from '../searchbar/searchbar_container';
 
 const sessionLinks = () => {
   return (
@@ -26,7 +27,10 @@ const homepage = (currentUser, logout) => {
         <div className="links-container">
           { info }
         </div>
-        <Link to="/"><h1 id="logo"> Hoot </h1></Link>
+        <div>
+          <Link to="/"><h1 id="logo"> Hoot </h1></Link>
+          <SearchBarContainer />
+        </div>
         <p>Johnny's Grill Photo By Diane Mariel</p>
       </div>
     </div>
@@ -41,7 +45,7 @@ const businessPages = (currentUser, logout) => {
       <div className="navbar-top">
         <Link to="/"><h1 id="logo"> Hoot </h1></Link>
         <div className="SearchBar">
-          <h1>SearchBar............................</h1>
+          <SearchBarContainer />
         </div>
         { info }
       </div>

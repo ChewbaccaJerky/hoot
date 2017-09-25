@@ -32,7 +32,7 @@ export const fetchBusiness = (placeId) => dispatch => (
   ), err => dispatch(receiveBusinessErrors(err))
 );
 
-export const searchAndfetchBusinesses = (searchParams) => dispatch => (
+export const searchAndFetchBusinesses = (searchParams) => dispatch => (
   SearchAPIUtil.searchBusinesses(searchParams).then( businesses => (
     dispatch(receiveBusinesses(businesses)))
   ), (err) => dispatch(receiveBusinessErrors(err))
