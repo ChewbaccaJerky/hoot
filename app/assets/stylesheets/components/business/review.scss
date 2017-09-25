@@ -1,0 +1,14 @@
+
+.review-and-biz-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+  padding: 0 10em;
+
+  .review-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+  }
+}

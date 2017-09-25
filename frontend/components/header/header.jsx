@@ -1,8 +1,8 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const Header = () => (
   <div className="header">
-    <h1> Hoot </h1>
+    <Link to="/"><h1 id="logo"> Hoot </h1></Link>
   </div>
 );
 

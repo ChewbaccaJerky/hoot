@@ -1,0 +1,41 @@
+@import '../variables';
+.business-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  .current-info {
+    display: flex;
+    flex-direction: column;
+    background-color: #F5F5F5;
+    border-radius: 0.5em;
+    border: 1px solid #E6E6E6;
+    padding: 1em;
+
+    .closed {
+      color: red;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    .open {
+      color: green;
+      border-bottom: 1px solid gray;
+    }
+  }
+
+  .detail-info {
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    ul {
+      li {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    h1 {
+      color: $primary-color;
+    }
+  }
+}

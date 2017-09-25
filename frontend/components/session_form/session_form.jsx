@@ -67,14 +67,14 @@ class SessionForm extends React.Component {
             <button type="submit" onClick={this.handleSubmit}>Log In</button>
             <button onClick={this.demoLogin}>Demo</button>
           </div>
-
+          <Link to="/signup">don't have a profile?</Link>
         </form>
     );
   }
 
   signupForm() {
     let err = {};
-    
+
     if(this.props.errors.responseJSON) {
       err = this.handleErrors(this.props.errors.responseJSON);
     }
@@ -112,6 +112,7 @@ class SessionForm extends React.Component {
 
 
           <button type="submit">Sign Up</button>
+          <Link to="/login">already have a username?</Link>
         </form>
     );
   }

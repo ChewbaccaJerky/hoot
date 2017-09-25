@@ -26,7 +26,7 @@ const homepage = (currentUser, logout) => {
         <div className="links-container">
           { info }
         </div>
-        <h1 id="logo">Hoot</h1>
+        <Link to="/"><h1 id="logo"> Hoot </h1></Link>
         <p>Johnny's Grill Photo By Diane Mariel</p>
       </div>
     </div>
@@ -39,7 +39,7 @@ const businessPages = (currentUser, logout) => {
   return (
     <div className="navbar">
       <div className="navbar-top">
-        <h1 id="logo"> Hoot </h1>
+        <Link to="/"><h1 id="logo"> Hoot </h1></Link>
         <div className="SearchBar">
           <h1>SearchBar............................</h1>
         </div>

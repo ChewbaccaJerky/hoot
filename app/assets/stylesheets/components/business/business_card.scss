@@ -1,0 +1,22 @@
+.business-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.5em;
+  box-shadow: 2px 2px 5px #888;
+  padding: 0.25em;
+  // overflow: hidden;
+  height: 30vh;
+  width: 20vw;
+  font-size: 1em;
+  margin-right: 1em;
+
+  .map-container {
+    display: flex;
+    height: 50%;
+  }
+
+  ul {
+    padding: 1em;
+  }
+}

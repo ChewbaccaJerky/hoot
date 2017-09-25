@@ -1,10 +1,11 @@
 import React from 'react';
 
 const BusinessCurrentInfo = (props) => {
-  let open_now = "false";
+  let status = {sign: "Closed", cName: "closed"};
   let price_level = "";
   if(props.open_now) {
-    open_now = "true";
+    status.sign = "Open";
+    status.cName = "open";
   }
   if(props.price_level) {
     for (var i = 0; i < props.price_level; i++) {
@@ -13,9 +14,9 @@ const BusinessCurrentInfo = (props) => {
   }
 
   return (
-    <div className="business-current-info">
-      <h1>{open_now}</h1>
-      <h1>{price_level}</h1>
+    <div className="current-info">
+      <h1 className={status.cName}>Status: {status.sign}</h1>
+      <h1>Price: {price_level}</h1>
     </div>
   );
 };
