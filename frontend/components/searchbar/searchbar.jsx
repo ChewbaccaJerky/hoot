@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = { find: "", near: "Oakland, CA" };
+    console.log(props);
+    this.state = { find: "tacos", near: "Oakland CA" };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -20,29 +20,28 @@ class SearchBar extends React.Component {
     e.preventDefault();
     let searchParams = `${this.state.find} ${this.state.near}`;
     this.props.searchAndFetchBusinesses(searchParams);
-
-    return (
-      <Redirect to={`/businesses/${searchParams}`} />
-    );
+    searchParams = searchParams.split(' ').join('+');
+    this.props.history.push(`search/${searchParams}`);
   }
 
   render() {
-    console.log(this.props);
+    let searchParams = `${this.state.find} ${this.state.near}`;
+    searchParams = searchParams.split(' ').join('+');
     return(
-      <form onSubmit={this.handleSubmit }>
-        <label> Find
+      <form onSubmit={ this.handleSubmit } className="searchbar">
+        <label className="find"> Find:
           <input type="text"
                  placeholder="tacos, japanese, coffee"
                  onChange={this.update("find")} />
         </label>
 
-        <label> Near
+        <label className="near"> Near:
           <input type="text"
                  placeholder="Oakland, CA"
                  onChange={this.update("near")} />
         </label>
 
-        <button type="submit"></button>
+        <input className="btn" type="submit" value="Search" />
       </form>
     );
   }

@@ -51,12 +51,18 @@
         margin: 1em;
       }
     }
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-    #logo {
-      font-size: 3em;
-      font-weight: bold;
-      color: #FFF;
-      text-shadow: 2px 2px 5px #888;
+      #logo {
+        font-size: 3em;
+        font-weight: bold;
+        color: #FFF;
+        text-shadow: 2px 2px 5px #888;
+      }
     }
 
     p {

@@ -1,0 +1,37 @@
+@import './variables.scss';
+.searchbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #E6E6E6;
+
+  label {
+    background-color: #FFF;
+    font-size: 1em;
+    padding: 0.75em;
+
+    input {
+      padding-left: 0.25em;
+      font-size: 1em;
+      width: 25vw;
+    }
+  }
+
+  .find {
+    border-top-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+  }
+
+  .btn {
+    padding: 0.81em;
+    font-size: 1em;
+    background-color: $primary-color;
+    color: #FFF;
+    border-top-right-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
