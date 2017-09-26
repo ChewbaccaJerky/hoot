@@ -1,16 +1,18 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import BusinessSearch from './business_search';
-import { searchAndFetchBusinesses } from '../../../actions/business_actions';
+import { fetchBusinesses, searchAndFetchBusinesses } from '../../../actions/business_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    image_key: state.ui.image
+    image_key: state.ui.image,
+    businesses: state.entities.businesses
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  searchAndFetchBusinesses: searchParams => dispatch(searchAndFetchBusinesses(searchParams))
+  searchAndFetchBusinesses: searchParams => dispatch(searchAndFetchBusinesses(searchParams)),
+  fetchBusinesses: () => dispatch(fetchBusinesses())
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BusinessSearch));

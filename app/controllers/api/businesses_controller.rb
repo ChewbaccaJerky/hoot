@@ -2,6 +2,9 @@ require 'rest-client'
 class Api::BusinessesController < ApplicationController
 
   def index
+    #TODO: handle filters
+    price_level = params[:price_level]
+    opened = params[:opened]
     url = "https://maps.googleapis.com/maps/api/place/textsearch/json?"
 
     response = RestClient.get url, {params: { key: ENV["google_api_key"],
@@ -9,6 +12,21 @@ class Api::BusinessesController < ApplicationController
 
     @businesses = JSON.parse(response)["results"]
 
+
+    #handle price level
+    if price_level != nil
+      @businesses.select! do |biz|
+        biz["price_level"] == price_level.to_i
+      end
+    end
+
+    if opened != nil
+      @businesses.select! do |biz|
+        biz["opening_hours"]["open_now"].to_s == opened
+      end
+    end
+
+    # render json: @businesses
     render '/api/businesses/index'
   end
 

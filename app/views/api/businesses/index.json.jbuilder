@@ -4,7 +4,8 @@
     json.address  business["formatted_address"]
     json.location business["geometry"]["location"]
     json.place_id business["place_id"]
-    json.types    business["types"]
+    json.opened   business["opening_hours"]["open_now"]
+    json.price_level business["price_level"]
     if business["photos"]
       json.photo_reference business["photos"][0]["photo_reference"]
     end

@@ -14,7 +14,7 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={NavBarContainer} />
       <Route path="/businesses/:biz_id" component={NavBarContainer} />
-      <Route path="/search/:searchParams" component={NavBarContainer} />
+      <Route path="/search" component={NavBarContainer} />
       <Route path="/signup" component={Header} />
       <Route path="/login" component ={Header} />
     </Switch>
@@ -25,7 +25,7 @@ const App = () => (
         <AuthRoute path="/login" component={SessionFormContainer} />
         <AuthRoute path="/signup" component={SessionFormContainer} />
         <Route path="/businesses/:biz_id" component={ShowBusinessContainer} />
-        <Route path="/search/:searchParams" component={BusinessSearchContainer} />
+        <Route path="/search" component={BusinessSearchContainer} />
       </Switch>
     </div>
 

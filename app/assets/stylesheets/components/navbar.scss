@@ -24,6 +24,7 @@
         align-self: flex-end;
         .session-links {
           display: flex;
+          flex-direction: row;
           margin: 2em;
 
           h2 {
@@ -109,6 +110,7 @@
     .session-links {
       display: flex;
       justify-content: space-between;
+      flex-direction: row;
       align-items: center;
 
       h2 {

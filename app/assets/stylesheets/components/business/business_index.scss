@@ -1,0 +1,37 @@
+@import '../variables.scss';
+
+.business-index-container {
+  width: 60vw;
+
+  .business-index{
+    padding: 1em;
+    height: 75vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+
+    .business-item {
+      background-color: #FFF;
+      box-shadow: 1px 1px 3px #888;
+      margin: 1em 0;
+      a {
+        display: flex;
+
+        img {
+          display: flex;
+          overflow: hidden;
+        }
+
+        .business-item-info {
+          align-items: center;
+          color: gray;
+          padding: 1em;
+          h1 {
+            color: #000;
+            font-size: 2em;
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
-    this.state = { find: "tacos", near: "Oakland CA" };
+    this.state = { find: "tacos", near: "Oakland CA", redirect_to: false };
     this.handleSubmit = this.handleSubmit.bind(this);
+    console.log(props);
   }
 
   update(field) {
@@ -21,17 +21,23 @@ class SearchBar extends React.Component {
     let searchParams = `${this.state.find} ${this.state.near}`;
     this.props.searchAndFetchBusinesses(searchParams);
     searchParams = searchParams.split(' ').join('+');
-    this.props.history.push(`search/${searchParams}`);
+
+    this.setState({redirect_to: true});
   }
 
   render() {
     let searchParams = `${this.state.find} ${this.state.near}`;
     searchParams = searchParams.split(' ').join('+');
+
+    if(this.state.redirect_to) {
+      this.setState({redirect_to: false});
+      return (<Redirect to='/search' />);
+    }
     return(
       <form onSubmit={ this.handleSubmit } className="searchbar">
         <label className="find"> Find:
           <input type="text"
-                 placeholder="tacos, japanese, coffee"
+                 placeholder="burgers, pizza, sushi"
                  onChange={this.update("find")} />
         </label>
 
