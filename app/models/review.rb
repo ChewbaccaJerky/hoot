@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-  validates :author_id, :place_id, :ratings, :body, presence: true
+  validates :author_id, :author_username, :place_id, :ratings, :body, presence: true
 
   belongs_to :author,
     primary_key: :id,

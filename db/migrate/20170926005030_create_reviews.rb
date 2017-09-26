@@ -2,8 +2,8 @@ class CreateReviews < ActiveRecord::Migration[5.1]
   def change
     create_table :reviews do |t|
       t.integer :author_id, null: false
-      t.string :author_name, null: false
-      t.integer :place_id, null: false
+      t.string :author_username, null: false
+      t.string :place_id, null: false
       t.float :ratings, null: false
       t.text :body, null: false
       t.timestamps

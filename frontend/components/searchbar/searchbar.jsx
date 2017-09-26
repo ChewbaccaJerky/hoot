@@ -5,15 +5,18 @@ import { Link } from 'react-router-dom';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { find: "tacos", near: "Oakland CA", redirect_to: false };
+    this.state = { find: "Restaurants", near: "San Francisco CA", redirect_to: false };
     this.handleSubmit = this.handleSubmit.bind(this);
-    console.log(props);
   }
 
   update(field) {
     return e => {
       this.setState({[field]: e.target.value})
     };
+  }
+
+  componentWillReceiveProps() {
+    this.setState({redirect_to: false});
   }
 
   handleSubmit(e) {
@@ -28,22 +31,23 @@ class SearchBar extends React.Component {
   render() {
     let searchParams = `${this.state.find} ${this.state.near}`;
     searchParams = searchParams.split(' ').join('+');
+    console.log(this.state.redirect_to);
 
     if(this.state.redirect_to) {
-      this.setState({redirect_to: false});
-      return (<Redirect to='/search' />);
+      return (<Redirect to='/search'/>);
     }
+
     return(
       <form onSubmit={ this.handleSubmit } className="searchbar">
         <label className="find"> Find:
           <input type="text"
-                 placeholder="burgers, pizza, sushi"
+                 placeholder="burgers, Japanese, Lounges"
                  onChange={this.update("find")} />
         </label>
 
         <label className="near"> Near:
           <input type="text"
-                 placeholder="Oakland, CA"
+                 placeholder="San Francisco, CA"
                  onChange={this.update("near")} />
         </label>
 
