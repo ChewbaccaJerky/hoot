@@ -9,7 +9,7 @@ import * as BizAPIUtil from './util/business_api_util';
 import { login, logout, signup } from './actions/session_actions';
 import { fetchBusinesses, fetchBusiness, searchAndfetchBusinesses } from './actions/business_actions';
 import { searchBusinesses } from './util/search_api_util';
-
+import * as ReviewAPIUtil from './util/review_api_util';
 document.addEventListener('DOMContentLoaded', ()=>{
   let root = document.getElementById('root');
   let store;
@@ -32,13 +32,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
     window.getState = store.getState;
     window.dispatch = store.dispatch;
     window.logout = logout;
-    window.bizUtil = BizAPIUtil;
-    window.fetchBusinesses = fetchBusinesses;
-    window.fetchBusiness = fetchBusiness;
-    window.searchAndfetchBusinesses = searchAndfetchBusinesses;
-    window.searchBusinesses = searchBusinesses;
-
+    window.ReviewAPIUtil = ReviewAPIUtil;
     ReactDOM.render(<Root store={store}/>, root);
   });
-
 });
+
+// window.bizUtil = BizAPIUtil;
+// window.fetchBusinesses = fetchBusinesses;
+// window.fetchBusiness = fetchBusiness;
+// window.searchAndfetchBusinesses = searchAndfetchBusinesses;
+// window.searchBusinesses = searchBusinesses;

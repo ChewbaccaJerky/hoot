@@ -21,8 +21,7 @@ const receiveBusinessErrors = errors => ({
 });
 
 export const fetchBusinesses = () => dispatch => (
-  BizAPIUtil.fetchBusinesses().then( businesses => (
-    dispatch(receiveBusinesses(businesses)))
+  BizAPIUtil.fetchBusinesses().then( businesses => (dispatch(receiveBusinesses(businesses)))
   ), (err) => dispatch(receiveBusinessErrors(err))
 );
 

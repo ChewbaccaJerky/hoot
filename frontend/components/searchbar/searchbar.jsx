@@ -31,7 +31,6 @@ class SearchBar extends React.Component {
   render() {
     let searchParams = `${this.state.find} ${this.state.near}`;
     searchParams = searchParams.split(' ').join('+');
-    console.log(this.state.redirect_to);
 
     if(this.state.redirect_to) {
       return (<Redirect to='/search'/>);
