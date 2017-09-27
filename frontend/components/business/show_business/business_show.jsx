@@ -3,7 +3,7 @@ import BusinessCard from './business_card';
 import BusinessInfo from './business_info';
 import ImageCarousel from './image_carousel';
 import ReviewIndex from './review/review_index';
-
+import Ratings from '../../rating/ratings.jsx';
 class BusinessShow extends React.Component {
   constructor(props) {
     super(props)
@@ -25,10 +25,11 @@ class BusinessShow extends React.Component {
     let biz = {};
     let price_level = "";
     let image_key = "";
-
+    let rating = 5;
     if(this.props.business) {
       biz = this.props.business;
       image_key = this.props.image_key;
+      rating = biz.ratings.toFixed(2);
     }
 
     if(biz.price_level) {
@@ -42,7 +43,7 @@ class BusinessShow extends React.Component {
         <div className="business-show-header">
           <div>
             <h1>{biz.name}</h1>
-            <h3>Ratings Placeholder</h3>
+            <h2>Rating: {rating}/5</h2>
           </div>
           <button>Write A Review</button>
         </div>

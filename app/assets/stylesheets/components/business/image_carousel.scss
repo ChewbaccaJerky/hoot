@@ -1,17 +1,22 @@
-
+@import '../variables.scss';
 .image-carousel {
   padding: 0.5em;
-  border-radius: 0.5em;
+  // border-radius: 0.5em;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: #FFF;
-  box-shadow: 2px 2px 5px #888;
+  box-shadow: $box-shadow;
 
   .image-carousel-item {
     display: flex;
     height: 30vh;
     width: 30vh;
     margin: 0.5em;
+    transition: height 1s, width 1s;
+    &:hover {
+      height: 32.5vh;
+      width: 32.5vh;
+    }
   }
 }

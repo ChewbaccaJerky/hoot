@@ -11,7 +11,7 @@ const ReviewIndexItem = (props) => {
              src={`http://lorempixel.com/400/400/abstract/${randNum}`}
              alt="profile pic"/>
         <h1>{review.author.username}</h1>
-        <h2>Ratings: {review.ratings}</h2>
+        <h2>Rating: {review.ratings}</h2>
       </div>
       <p>{review.body}</p>
     </li>
