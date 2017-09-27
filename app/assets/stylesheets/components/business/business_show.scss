@@ -10,8 +10,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10em;
-    height: 15vh;
+    padding: 2em 10em;
+    // height: 15vh;
     border-bottom: 1px solid #E6E6E6;
 
     div {
@@ -36,10 +36,11 @@
   }
 
   .features-container {
-    height: 30vh;
+    // height: 30vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2em 10em;
+    margin: 1em 0;
   }
 }

@@ -2,7 +2,6 @@ require 'rest-client'
 class Api::BusinessesController < ApplicationController
 
   def index
-    #TODO: handle filters
     price_level = params[:price_level]
     opened = params[:opened]
     url = "https://maps.googleapis.com/maps/api/place/textsearch/json?"

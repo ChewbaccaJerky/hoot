@@ -2,6 +2,7 @@ import React from 'react';
 import BusinessCard from './business_card';
 import BusinessInfo from './business_info';
 import ImageCarousel from './image_carousel';
+import ReviewIndex from './review/review_index';
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -10,11 +11,13 @@ class BusinessShow extends React.Component {
 
   componentDidMount(){
     this.props.fetchBusiness(this.props.match.params.biz_id);
+    this.props.fetchBusinessReviews(this.props.match.params.biz_id);
   }
 
   componentWillReceiveProps(newProps) {
     if(this.props.match.params.biz_id !== newProps.match.params.biz_id) {
       this.props.fetchBusiness(newProps.match.params.biz_id);
+      this.props.fetchBusinessReviews(newProps.match.params.biz_id);
     }
   }
 
@@ -22,10 +25,12 @@ class BusinessShow extends React.Component {
     let biz = {};
     let price_level = "";
     let image_key = "";
+
     if(this.props.business) {
       biz = this.props.business;
       image_key = this.props.image_key;
     }
+
     if(biz.price_level) {
       for (var i = 0; i < biz.price_level; i++) {
         price_level += '$';
@@ -48,7 +53,7 @@ class BusinessShow extends React.Component {
         </div>
 
         <div className="review-and-biz-container">
-          <div className="review-container">Reviews Placeholder</div>
+          <ReviewIndex reviews={this.props.reviews} />
           <BusinessInfo biz={biz}/>
         </div>
       </div>
