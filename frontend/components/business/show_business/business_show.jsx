@@ -2,11 +2,17 @@ import React from 'react';
 import BusinessCard from './business_card';
 import BusinessInfo from './business_info';
 import ImageCarousel from './image_carousel';
-import ReviewIndex from './review/review_index';
+import ReviewIndexContainer from './review/review_index_container';
+import ReviewFormContainer from './review/review_form_container';
 import Ratings from '../../rating/ratings.jsx';
+import Modal from 'react-modal';
+
 class BusinessShow extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {isModalOpen: false};
+    this.openCreateReviewForm = this.openCreateReviewForm.bind(this);
+    this.closeForm = this.closeForm.bind(this);
   }
 
   componentDidMount(){
@@ -19,6 +25,14 @@ class BusinessShow extends React.Component {
       this.props.fetchBusiness(newProps.match.params.biz_id);
       this.props.fetchBusinessReviews(newProps.match.params.biz_id);
     }
+  }
+
+  openCreateReviewForm() {
+    this.setState({isModalOpen: true});
+  }
+
+  closeForm() {
+    this.setState({isModalOpen: false});
   }
 
   render() {
@@ -38,6 +52,7 @@ class BusinessShow extends React.Component {
       }
     }
 
+
     return (
       <div className="business-show-container">
         <div className="business-show-header">
@@ -45,7 +60,7 @@ class BusinessShow extends React.Component {
             <h1>{biz.name}</h1>
             <h2>Rating: {rating}/5</h2>
           </div>
-          <button>Write A Review</button>
+          <button onClick={this.openCreateReviewForm}>Write A Review</button>
         </div>
 
         <div className="features-container">
@@ -54,9 +69,18 @@ class BusinessShow extends React.Component {
         </div>
 
         <div className="review-and-biz-container">
-          <ReviewIndex reviews={this.props.reviews} />
+          <ReviewIndexContainer reviews={this.props.reviews}/>
           <BusinessInfo biz={biz}/>
         </div>
+
+        <Modal
+          isOpen={this.state.isModalOpen}
+          contentLabel="Review Form"
+          onRequestClose={this.props.fetchBusinessReviews(this.props.match.params.biz_id)}>
+          <button onClick={this.closeForm}>X</button>
+          <ReviewFormContainer formType="new"/>
+
+        </Modal>
       </div>
     );
   }

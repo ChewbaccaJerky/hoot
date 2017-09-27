@@ -2,7 +2,6 @@ class Api::ReviewsController < ApplicationController
   def index
     # @reviews = Review.find_by(place_id: params[:business_id])
     @reviews = Review.where(place_id: params[:business_id])
-    puts @reviews
   end
 
   def create
@@ -29,7 +28,6 @@ class Api::ReviewsController < ApplicationController
 
   def update
     @review = current_user.reviews.find_by_id(params[:id])
-    puts "new params"
     if @review.update(review_params)
       render 'api/reviews/show'
     else

@@ -1,9 +1,12 @@
 import React from 'react';
 
 const ReviewIndexItem = (props) => {
-  console.log(props);
-  const review = props.review;
+  let review = {author:{ username: ""}, ratings: 5, body: ""}
+  if(props.review) {
+    review = props.review;
+  }
   const randNum = Math.ceil(Math.random()*10);
+  
   return (
     <li className="review-index-item">
       <div className="avatar">
