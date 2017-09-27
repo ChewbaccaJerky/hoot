@@ -23,7 +23,7 @@ class ReviewForm extends React.Component {
     return(
       <form className="review-form" onSubmit={this.handleSubmit}>
         Rating:
-          1<input type="radio" onChange={this.update('ratings')} name="ratings" value="1" />
+          1<input type="radio" onChange={this.update('ratings')} name="ratings" value="1"></input>
           2<input type="radio" onChange={this.update('ratings')} name="ratings" value="2" />
           3<input type="radio" onChange={this.update('ratings')} name="ratings" value="3" />
           4<input type="radio" onChange={this.update('ratings')} name="ratings" value="4" />

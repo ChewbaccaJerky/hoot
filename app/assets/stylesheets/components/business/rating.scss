@@ -1,0 +1,30 @@
+.star {
+    display: flex;
+    margin: 0.1em;
+    color: red;
+    border-radius: 0.5em;
+    overflow: hidden;
+    height: 2em;
+    width: 2em;
+    box-shadow: 1px 1px 3px #888;
+}
+
+.ratings-body {
+  margin: 1em;
+
+  .ratings {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.5em 0;
+    .star {
+        display: flex;
+        margin: 0.1em;
+        color: red;
+        border-radius: 0.5em;
+        overflow: hidden;
+        height: 2em;
+        width: 2em;
+        box-shadow: 1px 1px 3px #888;
+    }
+  }
+}

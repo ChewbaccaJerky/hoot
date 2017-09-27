@@ -1,4 +1,5 @@
 import React from 'react';
+import Ratings from '../../../rating/ratings';
 
 const ReviewIndexItem = (props) => {
   let review = {author:{ username: ""}, ratings: 5, body: ""}
@@ -6,7 +7,7 @@ const ReviewIndexItem = (props) => {
     review = props.review;
   }
   const randNum = Math.ceil(Math.random()*10);
-  
+
   return (
     <li className="review-index-item">
       <div className="avatar">
@@ -14,9 +15,11 @@ const ReviewIndexItem = (props) => {
              src={`http://lorempixel.com/400/400/abstract/${randNum}`}
              alt="profile pic"/>
         <h1>{review.author.username}</h1>
-        <h2>Rating: {review.ratings}</h2>
       </div>
-      <p>{review.body}</p>
+      <div className="ratings-body">
+        <Ratings ratings={review.ratings} />
+        <p>{review.body}</p>
+      </div>
     </li>
   );
 };

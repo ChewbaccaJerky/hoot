@@ -23,7 +23,7 @@ class BusinessShow extends React.Component {
   componentWillReceiveProps(newProps) {
     if(this.props.match.params.biz_id !== newProps.match.params.biz_id) {
       this.props.fetchBusiness(newProps.match.params.biz_id);
-      this.props.fetchBusinessReviews(newProps.match.params.biz_id);
+      // this.props.fetchBusinessReviews(newProps.match.params.biz_id);
     }
   }
 
@@ -43,7 +43,7 @@ class BusinessShow extends React.Component {
     if(this.props.business) {
       biz = this.props.business;
       image_key = this.props.image_key;
-      rating = biz.ratings.toFixed(2);
+      rating = biz.ratings
     }
 
     if(biz.price_level) {
@@ -56,9 +56,9 @@ class BusinessShow extends React.Component {
     return (
       <div className="business-show-container">
         <div className="business-show-header">
-          <div>
+          <div className="business-title">
             <h1>{biz.name}</h1>
-            <h2>Rating: {rating}/5</h2>
+            <Ratings ratings={biz.ratings}/>
           </div>
           <button onClick={this.openCreateReviewForm}>Write A Review</button>
         </div>
@@ -69,17 +69,16 @@ class BusinessShow extends React.Component {
         </div>
 
         <div className="review-and-biz-container">
-          <ReviewIndexContainer reviews={this.props.reviews}/>
+          <ReviewIndexContainer />
           <BusinessInfo biz={biz}/>
         </div>
 
         <Modal
           isOpen={this.state.isModalOpen}
           contentLabel="Review Form"
-          onRequestClose={this.props.fetchBusinessReviews(this.props.match.params.biz_id)}>
+          onRequestClose={() => {this.props.fetchBusinessReviews(this.props.match.params.biz_id)}}>
           <button onClick={this.closeForm}>X</button>
           <ReviewFormContainer formType="new"/>
-
         </Modal>
       </div>
     );

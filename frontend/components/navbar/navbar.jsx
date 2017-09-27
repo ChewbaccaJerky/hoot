@@ -49,14 +49,6 @@ const businessPages = (currentUser, logout) => {
         </div>
         { info }
       </div>
-
-      <div className="navbar-bottom">
-        <ul>
-          <li><a href='/'>Restaurants</a></li>
-          <li><a href='/'>Night Life</a></li>
-          <li><a href='/'>Write A Review</a></li>
-        </ul>
-      </div>
     </div>
   );
 };
