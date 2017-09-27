@@ -7,8 +7,7 @@ import configureStore from './store/store.js';
 import * as SeshUtil from './util/session_api_util';
 import * as BizAPIUtil from './util/business_api_util';
 import { login, logout, signup } from './actions/session_actions';
-import { fetchBusinesses, fetchBusiness, searchAndfetchBusinesses } from './actions/business_actions';
-import { searchBusinesses } from './util/search_api_util';
+import * as ReviewActions from './actions/review_actions';
 import * as ReviewAPIUtil from './util/review_api_util';
 document.addEventListener('DOMContentLoaded', ()=>{
   let root = document.getElementById('root');
@@ -32,7 +31,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     window.getState = store.getState;
     window.dispatch = store.dispatch;
     window.logout = logout;
-    window.ReviewAPIUtil = ReviewAPIUtil;
+    window.ReviewActions = ReviewActions;
     ReactDOM.render(<Root store={store}/>, root);
   });
 });

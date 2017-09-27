@@ -12,18 +12,10 @@ class Api::BusinessesController < ApplicationController
 
     @businesses = JSON.parse(response)["results"]
 
-
-    #handle price level
-    if price_level != nil
-      @businesses.select! do |biz|
-        biz["price_level"] == price_level.to_i
-      end
-    end
-
-    if opened != nil
-      @businesses.select! do |biz|
-        biz["opening_hours"]["open_now"].to_s == opened
-      end
+    @businesses.map do |biz|
+      ratings = Review.where('place_id' => biz["place_id"]).average(:ratings)
+      biz["ratings"] = if ratings.nil? then 5 else ratings.to_f end
+      biz
     end
 
     # render json: @businesses
@@ -42,6 +34,8 @@ class Api::BusinessesController < ApplicationController
       render json: ["Invalid Request"], status: 404
     else
       @business = response["result"]
+      ratings = Review.where('place_id' => @business["place_id"]).average(:ratings)
+      @business["ratings"] = if ratings.nil? then 5 else ratings.to_f end
       render '/api/businesses/show'
       # render json: @business
     end
