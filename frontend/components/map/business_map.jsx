@@ -4,7 +4,6 @@ import MarkerManager from '../../util/marker_manager';
 class BusinessMap extends React.Component {
   constructor(props) {
     super(props);
-    // console.log(props);
   }
 
   componentDidMount() {

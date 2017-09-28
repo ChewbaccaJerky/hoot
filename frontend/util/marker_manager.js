@@ -4,11 +4,12 @@ class MarkerManager {
   constructor(map) {
     this.map = map;
     this.markers = {};
+    this.lastWindow;
+    console.log(this.lastWindow);
   }
 
   updateMarkers(businesses) {
     const bizArray = Object.values(businesses);
-
     bizArray.forEach(biz => {
       if(!this.markers[biz.place_id]) {
         this.markers[biz.place_id] = new google.maps.Marker({
@@ -69,10 +70,15 @@ class MarkerManager {
 
     let marker = this.markers[business.place_id];
 
-    marker.addListener('click', ()=>{
+    marker.addListener('mouseover', ()=>{
       infowindow.open(this.map, marker);
     });
+
+    marker.addListener('mouseout', ()=>{
+      infowindow.close();
+    });
   }
+
 }
 
 export default MarkerManager;

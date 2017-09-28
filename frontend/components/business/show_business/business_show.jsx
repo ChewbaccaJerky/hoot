@@ -53,7 +53,7 @@ class BusinessShow extends React.Component {
     let price_level = "";
     let image_key = "";
     let rating = 5;
-    
+
     if(this.props.business) {
       biz = this.props.business;
       image_key = this.props.image_key;
@@ -78,7 +78,7 @@ class BusinessShow extends React.Component {
         </div>
 
         <div className="features-container">
-          <BusinessCard biz={biz} />
+          <BusinessCard biz={biz} image_key={image_key}/>
           <ImageCarousel photos={biz.photos} image_key={image_key}/>
         </div>
 
