@@ -22,10 +22,9 @@ class ReviewIndex extends React.Component {
     let content = [];
     let reviews;
     if(this.props.reviews) {
-      console.log(this.props.reviews);
       reviews = Object.values(this.props.reviews);
       content = reviews.map((review, idx) => (
-        <ReviewIndexItem key={review.id}
+        <ReviewIndexItem key={`${review.id}Review`}
                         review={review}
                         currentUser={this.props.currentUser}
                         deleteReview={this.props.deleteReview}/>

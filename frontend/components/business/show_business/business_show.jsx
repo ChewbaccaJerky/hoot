@@ -37,7 +37,7 @@ class BusinessShow extends React.Component {
       this.props.fetchBusiness(newProps.match.params.biz_id);
       // this.props.fetchBusinessReviews(newProps.match.params.biz_id);
     }
-    
+
   }
 
   openCreateReviewForm() {
@@ -53,6 +53,7 @@ class BusinessShow extends React.Component {
     let price_level = "";
     let image_key = "";
     let rating = 5;
+    
     if(this.props.business) {
       biz = this.props.business;
       image_key = this.props.image_key;

@@ -20,7 +20,6 @@ class BusinessMap extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps.businesses);
     this.MarkerManager.clear();
     this.MarkerManager.updateMarkers(nextProps.businesses);
   }

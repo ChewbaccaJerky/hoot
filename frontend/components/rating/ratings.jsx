@@ -5,7 +5,7 @@ const Rating = (props) => {
   if(props.ratings) {
     for (var i = 0; i < props.ratings; i++) {
       stars.push(
-        (<img src="http://www.freepngimg.com/download/star/11-star-png-image.png" className="star"/>)
+        (<img key={i} src="http://www.freepngimg.com/download/star/11-star-png-image.png" className="star"/>)
       );
     }
   }
