@@ -7,7 +7,8 @@ import { fetchBusinessReviews } from '../../../actions/review_actions';
 const mapStateToProps = (state, ownProps) => ({
     business: state.entities.businesses[ownProps.match.params.biz_id],
     reviews: state.entities.reviews,
-    image_key: state.ui.image
+    image_key: state.ui.image,
+    user: state.entities.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({

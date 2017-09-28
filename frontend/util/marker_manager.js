@@ -4,8 +4,6 @@ class MarkerManager {
   constructor(map) {
     this.map = map;
     this.markers = {};
-    this.lastWindow;
-    console.log(this.lastWindow);
   }
 
   updateMarkers(businesses) {

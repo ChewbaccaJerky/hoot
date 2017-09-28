@@ -8,9 +8,11 @@ const NewBusinessItem = ({biz, image_key}) => {
 
   return (
     <div className="new-business-item">
-      <Link to={`/businesses/${biz.place_id}`} >
-      <img src={`${url}maxwidth=400&photoreference=${biz.photo_reference}&key=${image_key}`} alt={biz.name} />
-      </Link>
+      <div className="new-biz-img">
+        <Link to={`/businesses/${biz.place_id}`} >
+            <img src={`${url}maxwidth=400&photoreference=${biz.photo_reference}&key=${image_key}`} alt={biz.name} />
+        </Link>
+      </div>
       <div className="new-business-info">
         <Link to={`/businesses/${biz.place_id}`}><h1>{biz.name}</h1></Link>
         <Ratings ratings={biz.ratings} />

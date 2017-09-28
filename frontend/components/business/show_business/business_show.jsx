@@ -74,7 +74,7 @@ class BusinessShow extends React.Component {
             <h1>{biz.name}</h1>
             <Ratings ratings={biz.ratings}/>
           </div>
-          <button onClick={this.openCreateReviewForm}>Write A Review</button>
+          { this.props.user === null ? "" : <button onClick={this.openCreateReviewForm}>Write A Review</button> }
         </div>
 
         <div className="features-container">

@@ -13,25 +13,34 @@
   }
 
   .new-businesses {
+    margin-top: 1em;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    // border: 1px solid black;
+    height: 25em;
 
     .new-business-item {
       display: flex;
       flex-direction: column;
-      margin: 1em;
+      height: 100%;
       width: 30%;
       box-shadow: 1px 1px 2px #888;
       border-radius: 0.5em;
       // overflow: hidden;
+      .new-biz-img {
 
-      img {
-        height: 50%;
+        a {
+          img {
+          }
+        }
+
       }
 
       .new-business-info {
+        height: 100%;
+
         h1 {
           color: #000;
           transition: color 0.5s;
@@ -39,6 +48,7 @@
             color: $primary-color;
           }
         }
+
         font-size: 1em;
         color: gray;
         padding: 1em;
