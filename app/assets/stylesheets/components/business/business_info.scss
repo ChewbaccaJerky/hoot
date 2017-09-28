@@ -9,7 +9,7 @@
     flex-direction: column;
     background-color: #F5F5F5;
     border-radius: 0.5em;
-    border: 1px solid #E6E6E6;
+    // border: 1px solid #E6E6E6;
     padding: 1em;
 
     .closed {
@@ -26,7 +26,9 @@
   .detail-info {
     margin: 1em;
     display: flex;
+    font-size: 1em;
     flex-direction: column;
+    width: 100%;
     ul {
       li {
         display: flex;
@@ -34,7 +36,19 @@
     }
 
     h1 {
+      span {
+        color: $primary-color;
+        font-size: 1.5em;
+        border-bottom: 1px solid #E8E8E8;
+      }
+    }
+
+    h2 {
       color: $primary-color;
     }
   }
+}
+
+.green {
+  color: green;
 }

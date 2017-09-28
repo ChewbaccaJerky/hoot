@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         entities:{
           businesses: businesses,
           session: { currentUser: window.currentUser }
-        },
+        }
       };
       store = configureStore(preloadedState);
       delete window.currentUser;

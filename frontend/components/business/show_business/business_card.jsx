@@ -11,9 +11,15 @@ const BusinessCard = (props) => {
     <div className="business-card">
       {bizMap}
       <div className="card-info">
-        {props.biz.address}
-        {props.biz.phone}
-        <a href={props.biz.website}>{props.biz.website}</a>
+        <div> <i className="material-icons">home</i>
+          {props.biz.address}
+        </div>
+        <div> <i className="material-icons">phone</i>
+          {props.biz.phone}
+        </div>
+        <div><i className="material-icons">web</i>
+          <a href={props.biz.website}>{props.biz.website}</a>
+        </div>
       </div>
     </div>
   );

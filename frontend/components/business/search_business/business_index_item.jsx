@@ -15,7 +15,6 @@ const BusinesIndexItem = (props) => {
         <div className="business-item-info">
           <h1>{biz.name}</h1>
           <h2>{biz.address}</h2>
-          <h2>Ratings placeholder....</h2>
         </div>
       </Link>
     </li>

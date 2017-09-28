@@ -7,7 +7,8 @@ const mapStateToProps = state => {
   let topThree = [Object.values(state.entities.businesses).slice(0,3)][0]
   return {
     new_businesses: topThree,
-    image_key: state.ui.image
+    image_key: state.ui.image,
+    loading: state.ui.loading
   };
 };
 

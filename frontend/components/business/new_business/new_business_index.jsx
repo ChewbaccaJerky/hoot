@@ -1,10 +1,10 @@
 import React from 'react';
 import NewBusinessItem from './new_business_item.jsx';
+import Spinner from '../../spinner/spinner';
 
 class NewBusinessIndex extends React.Component {
   constructor(props) {
     super(props);
-    // console.log(props);
   }
 
   componentDidMount() {

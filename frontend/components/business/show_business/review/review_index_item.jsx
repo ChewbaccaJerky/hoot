@@ -11,7 +11,7 @@ const ReviewIndexItem = (props) => {
     review = props.review;
     currentUser = props.currentUser;
     if(currentUser !== null && review.author.id === currentUser.id) {
-      deleteBtn = (<button onClick={() => props.deleteReview(review.id)}>Delete</button>);
+      deleteBtn = (<button onClick={() => props.deleteReview(review.id)}>DELETE</button>);
     }
     else {
       deleteBtn = "";

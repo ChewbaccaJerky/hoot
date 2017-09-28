@@ -7,9 +7,16 @@ const BusinessDetailInfo = (props) => {
   if(biz.hours) {
     hours = props.biz.hours.map((day, idx) => {
       words =  day.split(': ');
+      let hrs = words[1].split(',');
       return (
         <li key={day}>
-          <span>{words[0].slice(0, 3)}</span> {words[1]}
+          <div>
+            <h2>{words[0].slice(0,3)}:</h2>
+            <ul>
+              <li>{hrs[0] ? hrs[0] : ""}</li>
+              <li>{hrs[1] ? hrs[1] : ""}</li>
+            </ul>
+          </div>
         </li>
       );
     });
@@ -17,7 +24,7 @@ const BusinessDetailInfo = (props) => {
 
   return (
     <div className="detail-info">
-      <h1>Business Hours</h1>
+      <h1><span>Business Hours</span></h1>
       <ul>
         { hours }
       </ul>

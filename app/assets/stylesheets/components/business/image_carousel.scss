@@ -10,16 +10,16 @@
   background-color: #FFF;
   box-shadow: $box-shadow;
   box-sizing: border-box;
-  
+
   .image-carousel-item {
     display: flex;
     height: 30vh;
     width: 30vh;
     margin: 0.5em;
     transition: height 1s, width 1s;
-    &:hover {
-      height: 32.5vh;
-      width: 32.5vh;
-    }
+    // &:hover {
+    //   height: 31vh;
+    //   width: 31vh;
+    // }
   }
 }
