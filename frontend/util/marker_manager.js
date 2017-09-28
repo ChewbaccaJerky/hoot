@@ -4,6 +4,7 @@ class MarkerManager {
   constructor(map) {
     this.map = map;
     this.markers = {};
+    this.infoWindows = [];
   }
 
   updateMarkers(businesses) {
@@ -16,20 +17,11 @@ class MarkerManager {
           animation: google.maps.Animation.DROP
         });
 
-        this.markers[biz.place_id].addListener('click', this.toggleBounce);
         this.addInfoWindow(biz, this.markers[biz.place_id]);
       }
     });
     this.moveToLocation(bizArray[0].location);
     this.drop();
-  }
-
-  toggleBounce() {
-    if (this.getAnimation() !== null) {
-      this.setAnimation(null);
-    } else {
-      this.setAnimation(google.maps.Animation.BOUNCE);
-    }
   }
 
   drop(){
@@ -68,12 +60,13 @@ class MarkerManager {
 
     let marker = this.markers[business.place_id];
 
-    marker.addListener('mouseover', ()=>{
+    marker.addListener('click', ()=>{
       infowindow.open(this.map, marker);
-    });
 
-    marker.addListener('mouseout', ()=>{
-      infowindow.close();
+      for (var i = 0; i < this.infoWindows.length; i++) {
+        this.infoWindows[i].close();
+      }
+      this.infoWindows = [infowindow];
     });
   }
 
