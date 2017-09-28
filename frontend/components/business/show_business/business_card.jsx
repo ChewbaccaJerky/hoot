@@ -1,4 +1,5 @@
 import React from 'react';
+import BusinessMap from '../../map/business_map';
 
 const BusinessCard = (props) => {
 

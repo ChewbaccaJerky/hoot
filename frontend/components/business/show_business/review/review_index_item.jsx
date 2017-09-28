@@ -10,7 +10,12 @@ const ReviewIndexItem = (props) => {
     // console.log(review);
     review = props.review;
     currentUser = props.currentUser;
-    deleteBtn = (<button onClick={() => props.deleteReview(review.id)}>Delete</button>);
+    if(currentUser !== null && review.author.id === currentUser.id) {
+      deleteBtn = (<button onClick={() => props.deleteReview(review.id)}>Delete</button>);
+    }
+    else {
+      deleteBtn = "";
+    }
   }
 
   const randNum = Math.ceil(Math.random()*10);
@@ -26,7 +31,7 @@ const ReviewIndexItem = (props) => {
       <div className="ratings-body">
         <div>
           <Ratings ratings={review.ratings ? review.ratings : 5} />
-          { currentUser.id === review.author.id && review.author ? deleteBtn : "" }
+          {deleteBtn}
         </div>
         <p>{review.body}</p>
       </div>

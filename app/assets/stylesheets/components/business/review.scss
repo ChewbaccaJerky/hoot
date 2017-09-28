@@ -10,11 +10,18 @@
     h1[class='review-header'] {
       font-size: 2em;
       color: $primary-color;
+      border-bottom: 1px solid #E8E8E8;
     }
     .review-index {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      border-right: 1px solid #E8E8E8;
+      .no-review:before {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
       .review-index-item {
         display: flex;

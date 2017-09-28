@@ -19,8 +19,8 @@ class ReviewIndex extends React.Component {
   }
 
   render() {
-    let content = [];
     let reviews;
+    let content = [];
     if(this.props.reviews) {
       reviews = Object.values(this.props.reviews);
       content = reviews.map((review, idx) => (
@@ -30,11 +30,12 @@ class ReviewIndex extends React.Component {
                         deleteReview={this.props.deleteReview}/>
       ));
     }
+
     return (
       <div className="review-index-container">
         <h1 className="review-header"> Reviews </h1>
         <ul className="review-index">
-          {content}
+          {content.length > 0 ? content : (<li className="no-reviews"><h1>Be the first to review!</h1></li>)}
         </ul>
       </div>
     );

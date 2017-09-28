@@ -18,6 +18,7 @@ class MarkerManager {
         });
 
         this.markers[biz.place_id].addListener('click', this.toggleBounce);
+        this.addInfoWindow(biz, this.markers[biz.place_id]);
       }
     });
     this.moveToLocation(bizArray[0].location);
@@ -25,10 +26,10 @@ class MarkerManager {
   }
 
   toggleBounce() {
-    if (marker.getAnimation() !== null) {
-      marker.setAnimation(null);
+    if (this.getAnimation() !== null) {
+      this.setAnimation(null);
     } else {
-      marker.setAnimation(google.maps.Animation.BOUNCE);
+      this.setAnimation(google.maps.Animation.BOUNCE);
     }
   }
 
@@ -50,6 +51,27 @@ class MarkerManager {
   moveToLocation(location) {
     const center = new google.maps.LatLng(location.lat, location.lng);
     this.map.panTo(center);
+  }
+
+  addInfoWindow(business) {
+
+    const info =
+      `<div class="marker-info">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&key=AIzaSyAwBuCeQEcarQNOUY8c9qztNejHl17RmM0&photoreference=${business.photo_reference}" />
+        <a href="/#/businesses/${business.place_id}"><h1>${business.name}</h1></a>
+        <h3 class=${business.opened ? 'green' : 'red'}>${ business.opened ? "Open" : "Closed" }</h3>
+      </div>`
+    ;
+
+    let infowindow = new google.maps.InfoWindow({
+      content: info
+    });
+
+    let marker = this.markers[business.place_id];
+
+    marker.addListener('click', ()=>{
+      infowindow.open(this.map, marker);
+    });
   }
 }
 

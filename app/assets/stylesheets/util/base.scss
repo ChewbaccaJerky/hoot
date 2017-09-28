@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 
 html, body {
   padding: 0;
@@ -14,7 +16,7 @@ html, body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 input {
