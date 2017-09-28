@@ -7,6 +7,18 @@ import ReviewFormContainer from './review/review_form_container';
 import Ratings from '../../rating/ratings.jsx';
 import Modal from 'react-modal';
 
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
+
 class BusinessShow extends React.Component {
   constructor(props) {
     super(props)
@@ -25,6 +37,7 @@ class BusinessShow extends React.Component {
       this.props.fetchBusiness(newProps.match.params.biz_id);
       // this.props.fetchBusinessReviews(newProps.match.params.biz_id);
     }
+    
   }
 
   openCreateReviewForm() {
@@ -69,14 +82,15 @@ class BusinessShow extends React.Component {
         </div>
 
         <div className="review-and-biz-container">
-          <ReviewIndexContainer />
+          <ReviewIndexContainer/>
           <BusinessInfo biz={biz}/>
         </div>
 
         <Modal
           isOpen={this.state.isModalOpen}
           contentLabel="Review Form"
-          onRequestClose={() => {this.props.fetchBusinessReviews(this.props.match.params.biz_id)}}>
+          onRequestClose={() => {this.props.fetchBusinessReviews(this.props.match.params.biz_id)}}
+          style={customStyles}>
           <button onClick={this.closeForm}>X</button>
           <ReviewFormContainer formType="new"/>
         </Modal>

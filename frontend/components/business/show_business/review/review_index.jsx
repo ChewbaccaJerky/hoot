@@ -6,20 +6,29 @@ import ReviewIndexItem from './review_index_item';
 class ReviewIndex extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = this.props.reviews;
   }
 
   componentDidMount() {
     this.props.fetchBusinessReviews(this.props.match.params.biz_id);
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState(nextProps.reviews);
+  }
 
   render() {
     let content = [];
     let reviews;
     if(this.props.reviews) {
+      console.log(this.props.reviews);
       reviews = Object.values(this.props.reviews);
       content = reviews.map((review, idx) => (
-        <ReviewIndexItem key={review.author.id} review={review} />
+        <ReviewIndexItem key={review.id}
+                        review={review}
+                        currentUser={this.props.currentUser}
+                        deleteReview={this.props.deleteReview}/>
       ));
     }
     return (

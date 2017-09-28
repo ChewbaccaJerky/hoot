@@ -1,3 +1,4 @@
+json.id @review.id
 json.author do
   json.id       @review.author_id
   json.username @review.author_username

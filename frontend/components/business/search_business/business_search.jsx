@@ -1,5 +1,6 @@
 import React from 'react';
 import BusinessIndex from './business_index';
+import BusinessMap from '../../map/business_map';
 
 class BusinessSearch extends React.Component {
 
@@ -8,12 +9,16 @@ class BusinessSearch extends React.Component {
     this.state = props.businesses;
   }
 
+
+
   render() {
+    // console.log(this.props.businesses);
     return(
       <div className="business-search-container">
         <div>
           <BusinessIndex businesses={this.props.businesses} image_key={this.props.image_key}/>
         </div>
+        <BusinessMap businesses={this.props.businesses} image_key={this.props.image_key}/>
       </div>
     );
   }
