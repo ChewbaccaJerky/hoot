@@ -81,3 +81,6 @@ updateMarkers(businesses) {
     + User Profile
     + Followers
     + Include images to review
+    + Allow users to add images to business pages.
+  + Changes
+    + Move Sign Up and  Login Pages to Modals
