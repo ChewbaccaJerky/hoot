@@ -11,7 +11,6 @@ const ReviewReducer = (oldState = {}, action) => {
       return action.reviews;
 
     case RECEIVE_REVIEW:
-      console.log(action);
       newState[action.review.id] = action.review
       return newState;
 
