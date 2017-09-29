@@ -5,7 +5,6 @@ import Loading from '../../spinner/spinner';
 class BusinessIndex extends React.Component {
   constructor(props) {
     super(props)
-    // console.log(props);
     this.state = props.businesses;
   }
 
