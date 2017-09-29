@@ -1,4 +1,6 @@
-# README
+#Hoot
+
+##Hoot, a Yelp clone, is an application which helps people find great local businesses where users can rate and write reviews based on their experiences.
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
