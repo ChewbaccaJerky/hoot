@@ -59,19 +59,10 @@ class SessionForm extends React.Component {
       i++;
 
       if(i === password.length) {
-        this.props.processForm({user: this.state});
         clearTimeout(uVar);
+        this.props.processForm({user: this.state});
       }
     }, 175);
-
-    // i = 0;
-    // u = "";
-    // let pVar = setInterval(()=>{
-    //   u += password[i];
-    //   this.setState({password: u})
-    //   i++;
-    //   if(i === password.length) clearTimeout(pVar);
-    // }, 200);
   }
 
   loginForm() {

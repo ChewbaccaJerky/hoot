@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     if (window.currentUser) {
       const preloadedState = {
         entities:{
-          businesses: businesses,
+
           session: { currentUser: window.currentUser }
         }
       };
@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
       store = configureStore();
     }
 
-    window.getState = store.getState;
-    window.dispatch = store.dispatch;
-    window.logout = logout;
-    window.BusinessActions = BusinessActions;
-    window.ReviewActions = ReviewActions;
+    // window.getState = store.getState;
+    // window.dispatch = store.dispatch;
+    // window.logout = logout;
+    // window.BusinessActions = BusinessActions;
+    // window.ReviewActions = ReviewActions;
     ReactDOM.render(<Root store={store}/>, root);
   });
 });
