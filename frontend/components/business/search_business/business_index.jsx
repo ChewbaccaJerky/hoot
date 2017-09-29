@@ -8,7 +8,9 @@ class BusinessIndex extends React.Component {
     this.state = props.businesses;
   }
 
-
+  componentDidMount(){
+    this.props.fetchBusinesses();
+  }
 
   render() {
     let businesses = Object.values(this.props.businesses);

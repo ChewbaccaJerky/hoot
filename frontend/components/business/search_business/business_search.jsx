@@ -27,7 +27,9 @@ class BusinessSearch extends React.Component {
     this.state = defaultBusiness;
   }
 
-  
+    // componentDidMount(){
+    //   this.props.fetchBusinesses();
+    // }
 
   render() {
     let bizMap = (<BusinessMap businesses={defaultBusiness} image_key={this.props.image_key} />);
