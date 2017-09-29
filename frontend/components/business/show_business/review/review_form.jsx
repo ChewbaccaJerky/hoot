@@ -17,11 +17,12 @@ class ReviewForm extends React.Component {
     e.preventDefault();
     let place_id = this.props.match.params.biz_id;
     this.props.createBusinessReview(place_id, {review: this.state});
+    // this.props.closeForm();
     location.reload();
   }
 
   render() {
-    // console.log(this.props);
+
     return(
       <form className="review-form" onSubmit={this.handleSubmit}>
           <h1>Create A Review</h1>

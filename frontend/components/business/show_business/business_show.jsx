@@ -93,7 +93,7 @@ class BusinessShow extends React.Component {
           onRequestClose={() => {this.props.fetchBusinessReviews(this.props.match.params.biz_id)}}
           style={customStyles}>
           <button onClick={this.closeForm}>X</button>
-          <ReviewFormContainer formType="new"/>
+          <ReviewFormContainer formType="new" close_modal={this.closeForm}/>
         </Modal>
       </div>
     );
