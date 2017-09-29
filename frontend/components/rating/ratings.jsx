@@ -1,17 +1,23 @@
 import React from 'react';
-import FontAwesome from 'react-fontawesome';
+import ReactStars from 'react-stars';
+import PropTypes from 'prop-types'
 const Rating = (props) => {
-  let stars = [];
+  let content = "";
   if(props.ratings) {
-    for (var i = 0; i < props.ratings; i++) {
-      stars.push(
-        (<img key={i} src="http://www.freepngimg.com/download/star/11-star-png-image.png" className="star"/>)
-      );
-    }
+    content = (
+      <ReactStars
+        className="ratings"
+        count={5}
+        size={24}
+        color1={"#E8E8E8"}
+        color2={"#f8cc14"}
+        value={props.ratings}
+        edit={false}/>
+    );
   }
   return (
-    <div className="ratings">
-      {stars}
+    <div className="ratings-container">
+      {content}
     </div>
   );
 };

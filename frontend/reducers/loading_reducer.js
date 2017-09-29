@@ -1,6 +1,6 @@
 import { START_LOADING_BUSINESSES, START_LOADING_BUSINESS, RECEIVE_BUSINESSES, RECEIVE_BUSINESS } from '../actions/business_actions';
 
-const LoadingReducer = (oldState = false, action) => {
+const LoadingReducer = (oldState = true, action) => {
   Object.freeze(oldState);
 
   switch(action.type) {

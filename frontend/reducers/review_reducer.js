@@ -4,6 +4,7 @@ import { merge } from 'lodash';
 const ReviewReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState = merge({}, oldState);
+
   switch(action.type) {
 
     case RECEIVE_REVIEWS:
@@ -11,7 +12,7 @@ const ReviewReducer = (oldState = {}, action) => {
 
     case RECEIVE_REVIEW:
       console.log(action);
-      newState[action.review.author.id] = action.review
+      newState[action.review.id] = action.review
       return newState;
 
     case REMOVE_REVIEW:

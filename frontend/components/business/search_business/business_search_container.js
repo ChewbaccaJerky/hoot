@@ -6,6 +6,7 @@ import { fetchBusinesses, searchAndFetchBusinesses } from '../../../actions/busi
 const mapStateToProps = (state, ownProps) => {
   return {
     image_key: state.ui.image,
+    loading: state.ui.loading,
     businesses: state.entities.businesses
   };
 };

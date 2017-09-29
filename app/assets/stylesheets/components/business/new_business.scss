@@ -30,17 +30,15 @@
       border-radius: 0.5em;
       // overflow: hidden;
       .new-biz-img {
-
-        a {
-          img {
-          }
-        }
-
+        height: 40em;
+        width: auto;
       }
 
       .new-business-info {
         height: 100%;
-
+        font-size: 1em;
+        color: gray;
+        padding: 0.5em;
         h1 {
           color: #000;
           transition: color 0.5s;
@@ -49,21 +47,8 @@
           }
         }
 
-        font-size: 1em;
-        color: gray;
-        padding: 1em;
-        height: 50%;
 
-        .ratings {
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-start;
 
-          img {
-            height: 1.5em;
-            width: 1.5em;
-          }
-        }
       }
     }
   }

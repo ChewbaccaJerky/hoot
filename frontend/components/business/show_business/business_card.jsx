@@ -18,7 +18,7 @@ const BusinessCard = (props) => {
           {props.biz.phone}
         </div>
         <div><i className="material-icons">web</i>
-          <a href={props.biz.website}>{props.biz.website}</a>
+          <a href={props.biz.website}>{props.biz.name}</a>
         </div>
       </div>
     </div>

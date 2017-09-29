@@ -29,7 +29,7 @@ const startLoadingBusinesses = () => ({
 });
 
 const startLoadingBusiness = () => ({
-  type: startLoadingBusiness,
+  type: START_LOADING_BUSINESS,
 });
 
 export const fetchBusinesses = () => dispatch => {
@@ -39,7 +39,7 @@ export const fetchBusinesses = () => dispatch => {
 };
 
 export const fetchBusiness = (placeId) => dispatch => {
-  dispatch(startLoadingBusinesses());
+  dispatch(startLoadingBusiness());
   return BizAPIUtil.fetchBusiness(placeId).then( business => (
     dispatch(receiveBusiness(business)))
   ), err => dispatch(receiveBusinessErrors(err))

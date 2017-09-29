@@ -2,16 +2,19 @@ import React from 'react';
 import ImageCarouselItem from './image_carousel_item';
 
 const getImages = (photos, image_key) => {
+
   const imageItems = [];
   let imageItem;
-  // less than three and photos must exists
-  for (var i = 0; i < 3 && photos; i++) {
+
+  for(let i in photos) {
     imageItem = (<ImageCarouselItem
-                  photo={photos[i]}
-                  key={photos[i].photo_reference}
-                  image_key={image_key}/>);
-    imageItems.push(imageItem);
+      photo={photos[i]}
+      key={photos[i].photo_reference}
+      image_key={image_key}/>);
+      imageItems.push(imageItem);
   }
+
+
 
   return imageItems;
 }

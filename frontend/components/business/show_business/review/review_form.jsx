@@ -1,10 +1,12 @@
 import React from 'react';
-
+// import ReactStars from 'react-stars';
+// import PropTypes from 'prop-types'
 class ReviewForm extends React.Component {
   constructor(props){
     super(props)
     this.state = { ratings: null, body: ""}
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.newRating = this.newRating.bind(this);
   }
 
   update(field) {
@@ -13,28 +15,34 @@ class ReviewForm extends React.Component {
     }
   }
 
+  newRating(rating) {
+    this.setState({ratings: rating});
+    // console.log(this.state);
+  };
+
   handleSubmit(e) {
     e.preventDefault();
     let place_id = this.props.match.params.biz_id;
     this.props.createBusinessReview(place_id, {review: this.state});
-    // this.props.closeForm();
-    location.reload();
+    this.props.close_modal();
+    // location.reload();
   }
 
   render() {
 
     return(
       <form className="review-form" onSubmit={this.handleSubmit}>
-          <h1>Create A Review</h1>
+        <h1>Create A Review</h1>
 
-          <div className="radio-btn-container">
-            1<input type="radio" onChange={this.update('ratings')} name="ratings" value="1" />
-            2<input type="radio" onChange={this.update('ratings')} name="ratings" value="2" />
-            3<input type="radio" onChange={this.update('ratings')} name="ratings" value="3" />
-            4<input type="radio" onChange={this.update('ratings')} name="ratings" value="4" />
-            5<input type="radio" onChange={this.update('ratings')} name="ratings" value="5" />
-            <label>    Select a rating.</label>
-          </div>
+        <div className="radio-btn-container">
+        1<input type="radio" onChange={this.update('ratings')} name="ratings" value="1" />
+        2<input type="radio" onChange={this.update('ratings')} name="ratings" value="2" />
+        3<input type="radio" onChange={this.update('ratings')} name="ratings" value="3" />
+        4<input type="radio" onChange={this.update('ratings')} name="ratings" value="4" />
+        5<input type="radio" onChange={this.update('ratings')} name="ratings" value="5" />
+        <label>    Select a rating.</label>
+        </div>
+
         <textarea
           type="text"
           onChange={this.update("body")}
@@ -47,3 +55,14 @@ class ReviewForm extends React.Component {
 }
 
 export default ReviewForm;
+
+
+
+//
+// <ReactStars
+// className="ratings"
+// count={5}
+// color2={"#f8cc14"}
+// size={25}
+// onChange={this.newRating}
+// />
