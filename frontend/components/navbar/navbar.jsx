@@ -31,7 +31,7 @@ const homepage = (currentUser, logout) => {
           <Link to="/"><h1 id="logo"> Hoot </h1></Link>
           <SearchBarContainer />
         </div>
-        <p>Johnny's Grill Photo By Diane Mariel</p>
+        <p>Search and explore</p>
       </div>
     </div>
   );

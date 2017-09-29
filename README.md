@@ -52,7 +52,7 @@ Hoot is using a server-side http call to retrieve information of a business then
 
 ## Google Maps API Integration
 
-  As the backend retrieve and serve data to the frontend, Hoots places and renders markers onto map to be displayed to it's users.
+  As the backend retrieve and serve data to the frontend, Hoot places and renders markers onto the map to be displayed to it's users.
 
 ```
 updateMarkers(businesses) {
