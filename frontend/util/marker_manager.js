@@ -45,12 +45,12 @@ class MarkerManager {
   }
 
   addInfoWindow(business) {
-
+    console.log(business);
     const info =
       `<div class="marker-info">
         <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&key=AIzaSyAwBuCeQEcarQNOUY8c9qztNejHl17RmM0&photoreference=${business.photo_reference}" />
         <a href="/#/businesses/${business.place_id}"><h1>${business.name}</h1></a>
-        <h3 class=${business.opened ? 'green' : 'red'}>${ business.opened ? "Open" : "Closed" }</h3>
+        <h3 class=${business.opened === true ? 'green' : 'red'}>${ business.opened === true ? "Open" : "Closed" }</h3>
       </div>`
     ;
 

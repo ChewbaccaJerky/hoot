@@ -17,7 +17,6 @@ class Api::BusinessesController < ApplicationController
       biz
     end
 
-    # render json: @businesses
     render '/api/businesses/index'
   end
 

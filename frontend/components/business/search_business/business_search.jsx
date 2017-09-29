@@ -2,13 +2,15 @@ import React from 'react';
 import BusinessIndex from './business_index';
 import BusinessMap from '../../map/business_map';
 
-const defaultBusiness = {"ChIJA-2qKIt9hYARZ5N1NdUVtHE": {
+const defaultBusiness = {
+"ChIJA-2qKIt9hYARZ5N1NdUVtHE": {
 "name": "Oakland",
 "address": "Oakland, CA, USA",
 "location": {
 "lat": 37.8043637,
 "lng": -122.2711137
 },
+"opened": true,
 "place_id": "ChIJA-2qKIt9hYARZ5N1NdUVtHE",
 "types": [
 "locality",
@@ -22,6 +24,7 @@ class BusinessSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = defaultBusiness;
+    console.log(props);
   }
 
   render() {

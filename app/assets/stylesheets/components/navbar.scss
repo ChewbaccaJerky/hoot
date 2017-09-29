@@ -121,28 +121,28 @@
     }
   }
 
-  .navbar-bottom {
-    background-color: $primary-color;
-    padding: 0 10vw;
-    ul {
-      display: flex;
-      justify-content: flex-start;
-
-      li {
-        padding: 0 1em;
-        transition: background-color 1s;
-        a {
-          color: #FFF;
-        }
-
-        &:hover {
-          background-color: #FFF;
-
-          a {
-            color: $primary-color;
-          }
-        }
-      }
-    }
-  }
+  // .navbar-bottom {
+  //   background-color: $primary-color;
+  //   padding: 0 10vw;
+  //   ul {
+  //     display: flex;
+  //     justify-content: flex-start;
+  //
+  //     li {
+  //       padding: 0 1em;
+  //       transition: background-color 1s;
+  //       a {
+  //         color: #FFF;
+  //       }
+  //
+  //       &:hover {
+  //         background-color: #FFF;
+  //
+  //         a {
+  //           color: $primary-color;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 }
