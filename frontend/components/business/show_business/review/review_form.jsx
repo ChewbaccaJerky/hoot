@@ -1,12 +1,10 @@
 import React from 'react';
-// import ReactStars from 'react-stars';
-// import PropTypes from 'prop-types'
+
 class ReviewForm extends React.Component {
   constructor(props){
     super(props)
     this.state = { ratings: null, body: ""}
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.newRating = this.newRating.bind(this);
   }
 
   update(field) {
@@ -15,17 +13,11 @@ class ReviewForm extends React.Component {
     }
   }
 
-  newRating(rating) {
-    this.setState({ratings: rating});
-    // console.log(this.state);
-  };
-
   handleSubmit(e) {
     e.preventDefault();
     let place_id = this.props.match.params.biz_id;
     this.props.createBusinessReview(place_id, {review: this.state});
     this.props.close_modal();
-    // location.reload();
   }
 
   render() {

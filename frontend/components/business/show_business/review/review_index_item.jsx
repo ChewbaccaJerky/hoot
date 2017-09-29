@@ -5,13 +5,16 @@ import { Redirect } from 'react-router';
 class ReviewIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props.review;
   }
 
   render() {
     const review = this.props.review;
     const randNum = Math.ceil(Math.random()*10);
     const button = (<button onClick={() => this.props.deleteReview(review.id)}>DELETE</button>);
+    let content = "";
+    if(this.props.currentUser && review) {
+      content = this.props.currentUser.id === review.author.id ? button : "";
+    }
     return(
       <li className="review-index-item">
          <div className="avatar">
@@ -23,7 +26,7 @@ class ReviewIndexItem extends React.Component {
          <div className="ratings-body">
            <div>
              <Ratings ratings={review.ratings ? review.ratings : 5} />
-             { this.props.currentUser.id === review.author.id ? button : "" }
+             { content }
            </div>
            <p>{review.body}</p>
          </div>
