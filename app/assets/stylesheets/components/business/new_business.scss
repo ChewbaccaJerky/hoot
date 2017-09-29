@@ -47,7 +47,16 @@
           }
         }
 
+        .ratings-container {
+          .ratings {
+            display: flex;
+            .star {
+              height: 2em;
+              width: auto;
+            }
+          }
 
+        }
 
       }
     }

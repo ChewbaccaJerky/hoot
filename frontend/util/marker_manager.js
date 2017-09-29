@@ -9,25 +9,27 @@ class MarkerManager {
 
   updateMarkers(businesses) {
     const bizArray = Object.values(businesses);
-    bizArray.forEach(biz => {
-      if(!this.markers[biz.place_id]) {
-        this.markers[biz.place_id] = new google.maps.Marker({
-          position: biz.location,
-          title: biz.name,
+
+    for(let biz in bizArray) {
+      if(!this.markers[bizArray[biz].place_id]) {
+        this.markers[bizArray[biz].place_id] = new google.maps.Marker({
+          position: bizArray[biz].location,
+          title: bizArray[biz].name,
           animation: google.maps.Animation.DROP
         });
 
-        this.addInfoWindow(biz, this.markers[biz.place_id]);
+        this.addInfoWindow(bizArray[biz], this.markers[bizArray[biz].place_id]);
       }
-    });
+    }
+
     this.moveToLocation(bizArray[0].location);
     this.drop();
   }
 
-  drop(){
+  drop() {
     for(let mark in this.markers) {
       setTimeout(() => {
-        this.markers[mark].setMap(this.map);
+        if(this.markers[mark]){this.markers[mark].setMap(this.map)}
       }, 200);
     }
   }

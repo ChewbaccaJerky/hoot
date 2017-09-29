@@ -1,23 +1,18 @@
 import React from 'react';
-import ReactStars from 'react-stars';
-import PropTypes from 'prop-types'
 const Rating = (props) => {
-  let content = "";
+  let content = [];
   if(props.ratings) {
-    content = (
-      <ReactStars
-        className="ratings"
-        count={5}
-        size={24}
-        color1={"#E8E8E8"}
-        color2={"#f8cc14"}
-        value={props.ratings}
-        edit={false}/>
-    );
+    for (var i = 0; i < props.ratings; i++) {
+      content.push(
+        <img key={i * (Math.random() * 9999)} src="http://www.freepngimg.com/download/star/11-star-png-image.png" className="star"/>
+      );
+    }
   }
   return (
     <div className="ratings-container">
-      {content}
+      <div className="ratings">
+        {content}
+      </div>
     </div>
   );
 };
@@ -35,3 +30,14 @@ http://www.freepngimg.com/download/star/11-star-png-image.png
 yellow star
 http://www.freepngimg.com/download/star/8-yellow-star-png-image.png
 */
+
+// content = (
+//   <ReactStars
+//     className="ratings"
+//     count={5}
+//     size={24}
+//     color1={"#E8E8E8"}
+//     color2={"#f8cc14"}
+//     value={props.ratings}
+//     edit={false}/>
+// );
