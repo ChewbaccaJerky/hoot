@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     if (window.currentUser) {
       const preloadedState = {
         entities:{
-
           session: { currentUser: window.currentUser }
         }
       };
@@ -29,17 +28,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
       store = configureStore();
     }
 
-    // window.getState = store.getState;
-    // window.dispatch = store.dispatch;
-    // window.logout = logout;
-    // window.BusinessActions = BusinessActions;
-    // window.ReviewActions = ReviewActions;
     ReactDOM.render(<Root store={store}/>, root);
   });
 });
-
-// window.bizUtil = BizAPIUtil;
-// window.fetchBusinesses = fetchBusinesses;
-// window.fetchBusiness = fetchBusiness;
-// window.searchAndfetchBusinesses = searchAndfetchBusinesses;
-// window.searchBusinesses = searchBusinesses;
