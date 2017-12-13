@@ -48,9 +48,7 @@ class BusinessSearch extends React.Component {
 
     return(
       <div className="business-search-container">
-        <div>
-          {bizIndex}
-        </div>
+        {bizIndex}
         {bizMap}
       </div>
     );

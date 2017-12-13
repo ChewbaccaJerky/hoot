@@ -25,10 +25,12 @@ class BusinessIndex extends React.Component {
     }
 
     return (
-      <div className="business-index-container">
-        <ul className="business-index">
-          { businesses }
-        </ul>
+      <div>
+        <div className="business-index-container">
+          <ul className="business-index">
+            { businesses }
+          </ul>
+        </div>
       </div>
     );
   }
