@@ -40,7 +40,7 @@ class SearchBar extends React.Component {
       <form onSubmit={ this.handleSubmit } className="searchbar">
         <label className="find"> Find:
           <input type="text"
-                 placeholder="burgers, Japanese, Hiking, REI"
+                 placeholder="Burgers, Hiking, REI"
                  onChange={this.update("find")} />
         </label>
 

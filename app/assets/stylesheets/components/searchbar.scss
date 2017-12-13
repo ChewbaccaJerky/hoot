@@ -24,16 +24,51 @@
 
   .btn {
     padding: 0.81em;
-    font-size: 1em;
+    font-size: 0.9em;
     text-shadow: 1px 1px 2px #888;
-    background-color: $primary-color;
-    color: #FFF;
-    border-top-right-radius: 0.3em;
-    border-bottom-right-radius: 0.3em;
+    // background-color: $primary-color;
+    // color: #FFF;
+
+    border: 2px solid $primary-color;
+    background-color: transparent;
+    color: $primary-color;
+    
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
     transition: all 0.5s;
     &:hover {
       cursor: pointer;
-      box-shadow: 3px 3px 5px #888;
+      // box-shadow: 3px 3px 5px #888;
+      background-color: $primary-color;
+      color: #FFF;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .searchbar {
+    flex-direction: column;
+    justify-content: space-between;
+
+    label {
+      width: 90vw;
+      margin: 0.5em 0;
+      border-radius: 0.5em;
+
+      input:not(.btn) {
+        padding-left: 0.25em;
+        font-size: 1em;
+        width: 70vw;
+      }
+    }
+
+    .find {
+      border-radius: 0.5em;
+    }
+
+    .btn {
+      border-radius: 1em;
+      width: 95vw;
     }
   }
 }
