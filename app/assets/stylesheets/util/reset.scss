@@ -17,3 +17,7 @@ ol, ul {
 img {
   width: 100%
 }
+
+input[type="submit"], input[type="button"] {
+  border-radius: 0;
+}

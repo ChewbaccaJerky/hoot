@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../footer/footer';
 import SearchBarContainer from '../searchbar/searchbar_container';
 
 const sessionLinks = () => {
@@ -27,11 +28,12 @@ const homepage = (currentUser, logout) => {
         <div className="links-container">
           { info }
         </div>
-        <div>
+        <div className="navbar-search">
           <Link to="/"><h1 id="logo"> Hoot </h1></Link>
           <SearchBarContainer />
+          <p>Search And Explore</p>
         </div>
-        <p>Search and explore</p>
+        <Footer />
       </div>
     </div>
   );

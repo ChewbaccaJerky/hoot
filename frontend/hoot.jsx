@@ -15,19 +15,22 @@ document.addEventListener('DOMContentLoaded', ()=>{
   let store;
 
   // Preload Businesses to Initial Page
-  BizAPIUtil.fetchBusinesses().then(businesses => {
-    if (window.currentUser) {
-      const preloadedState = {
-        entities:{
-          session: { currentUser: window.currentUser }
-        }
-      };
-      store = configureStore(preloadedState);
-      delete window.currentUser;
-    } else {
-      store = configureStore();
-    }
+  // BizAPIUtil.fetchBusinesses().then(businesses => {
+  //   if (window.currentUser) {
+  //     const preloadedState = {
+  //       entities:{
+  //         session: { currentUser: window.currentUser }
+  //       }
+  //     };
+  //     store = configureStore(preloadedState);
+  //     delete window.currentUser;
+  //   } else {
+  //     store = configureStore();
+  //   }
+  //   ReactDOM.render(<Root store={store}/>, root);
+  // });
 
-    ReactDOM.render(<Root store={store}/>, root);
-  });
+  delete window.currentUser;
+  store = configureStore();
+  ReactDOM.render(<Root store={store}/>, root);
 });

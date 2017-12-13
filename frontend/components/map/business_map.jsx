@@ -24,7 +24,6 @@ class BusinessMap extends React.Component {
   }
 
   render (){
-
     return(
       <div className="map-container" ref={ map => this.mapNode = map }>
         Map is not working....

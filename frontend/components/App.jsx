@@ -21,7 +21,6 @@ const App = () => (
 
     <div className="main-page">
       <Switch>
-        <Route exact path="/" component={NewBusinessIndexContainer}/>
         <AuthRoute path="/login" component={SessionFormContainer} />
         <AuthRoute path="/signup" component={SessionFormContainer} />
         <Route path="/businesses/:biz_id" component={ShowBusinessContainer} />
@@ -29,8 +28,11 @@ const App = () => (
       </Switch>
     </div>
 
-    <Route path='/' component={Footer} />
+    
   </div>
 );
 
+
+// <Route exact path="/" component={NewBusinessIndexContainer}/>
+// <Route exact path='/' component={Footer} />
 export default App;

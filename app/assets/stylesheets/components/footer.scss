@@ -1,19 +1,38 @@
 @import "./variables.scss";
 
 .footer {
-  height: 10vh;
+  height: 5vh;
+  width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: $footer-color;
+  background-color: rgba(0,0,0, 0.2);
 
   a {
     margin: 0 1em;
     font-size: 0.8em;
-    color: #888;
+    color: #FFF;
     transition: color 1s;
     &:hover {
       color: $primary-color;
+    }
+
+    .github {
+      // background: url(image_path($github-loc)) no-repeat center;
+    }
+
+    .linkedin {
+      // background: url(image_path($linkedin-loc)) no-repeat center;
+      height: 3vh;
+      width: 100%;
+      &:hover {
+        background-color: orange;
+      }
+    }
+
+    .website {
+      // background: url(image_path($website-loc)) no-repeat center;
     }
   }
 }
