@@ -29,9 +29,9 @@ const homepage = (currentUser, logout) => {
           { info }
         </div>
         <div className="navbar-search">
-          <Link to="/"><h1 id="logo"> Hoot </h1></Link>
+          <a href="#"><h1 id="logo"> Hoot </h1></a>
           <SearchBarContainer />
-          <p>Search And Explore</p>
+          <p>Search and Explore</p>
         </div>
         <Footer />
       </div>
