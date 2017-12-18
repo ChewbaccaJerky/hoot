@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../footer/footer';
 import SearchBarContainer from '../searchbar/searchbar_container';
+import Modal from 'react-modal';
 
 const sessionLinks = () => {
   return (
@@ -55,6 +56,10 @@ const businessPages = (currentUser, logout) => {
   );
 };
 
+/**************************************************/
+/****************** NavBar ************************/
+/**************************************************/
+
 const NavBar = ({currentUser, logout, path}) => {
 
   let content = path === "/" ? homepage(currentUser, logout) : businessPages(currentUser, logout);
@@ -67,3 +72,4 @@ const NavBar = ({currentUser, logout, path}) => {
 };
 
 export default NavBar;
+

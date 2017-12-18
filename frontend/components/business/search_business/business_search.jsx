@@ -27,10 +27,6 @@ class BusinessSearch extends React.Component {
     this.state = defaultBusiness;
   }
 
-    // componentDidMount(){
-    //   this.props.fetchBusinesses();
-    // }
-
   render() {
     let bizMap = (<BusinessMap businesses={defaultBusiness} image_key={this.props.image_key} />);
     let bizIndex = (<BusinessIndexContainer businesses={defaultBusiness} image_key={this.props.image_key}/>);
@@ -40,11 +36,11 @@ class BusinessSearch extends React.Component {
       bizIndex = (<BusinessIndexContainer businesses={this.props.businesses} image_key={this.props.image_key}/>);
     }
 
-    // if(this.props.loading) {
-    //   return (
-    //     <Loading />
-    //   );
-    // }
+    if(this.props.loading) {
+      return (
+        <Loading />
+      );
+    }
 
     return(
       <div className="business-search-container">
