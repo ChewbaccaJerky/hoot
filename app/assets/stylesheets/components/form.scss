@@ -1,25 +1,21 @@
 @import "./variables";
 
 .form-container {
-  height: 100vh;
+  height: 95vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: url($image-url) no-repeat bottom;
+  // background: url(https://images.pexels.com/photos/54455/cook-food-kitchen-eat-54455.jpeg?w=940&h=650&auto=compress&cs=tinysrgb) no-repeat bottom;
   background-size: cover;
-  // .img-form {
-  //   background: url('https://s3-media4.fl.yelpcdn.com/assets/2/www/img/1e82406ff345/signup/signup_illustration.png') center;
-  //   height: 200px;
-  //   width: auto;
-  // }
 
 
   form {
     display: flex;
     flex-direction: column;
     width: 50%;
-    background-color: rgba(250,250,250, 0.8);
-    border-radius: 10px;
+    background-color: rgba(250,250,250, 0.9);
+    // border-radius: 10px;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
     padding: 25px;
 
