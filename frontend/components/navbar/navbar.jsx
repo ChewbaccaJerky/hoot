@@ -4,6 +4,17 @@ import Footer from '../footer/footer';
 import SearchBarContainer from '../searchbar/searchbar_container';
 import Modal from 'react-modal';
 
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)'
+  }
+};
+
 const sessionLinks = () => {
   return (
     <div className="session-links">
@@ -63,7 +74,7 @@ const businessPages = (currentUser, logout) => {
 const NavBar = ({currentUser, logout, path}) => {
 
   let content = path === "/" ? homepage(currentUser, logout) : businessPages(currentUser, logout);
-
+  
   return (
     <div className="navbar-container">
       { content }
