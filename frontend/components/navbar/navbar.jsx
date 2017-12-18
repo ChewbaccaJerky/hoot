@@ -114,7 +114,6 @@ class NavBar extends React.Component {
 
 const customStyles = {
   overlay: {
-    // backgroundColor: 'rgba(0, 0, 0, 0.6)'
     backgroundColor : 'rgba(255, 255, 255, 0.3)'
   },
   content: {

@@ -21,8 +21,6 @@ const App = () => (
 
     <div className="main-page">
       <Switch>
-        <AuthRoute path="/login" component={SessionFormContainer} />
-        <AuthRoute path="/signup" component={SessionFormContainer} />
         <Route path="/businesses/:biz_id" component={ShowBusinessContainer} />
         <Route path="/search" component={BusinessSearchContainer} />
       </Switch>
