@@ -4,7 +4,6 @@ import { Link, withRouter } from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-
     if(props.location.pathname === "/login") {
       this.state = {username: "", password: ""};
     }
@@ -17,10 +16,23 @@ class SessionForm extends React.Component {
                     last_name: ""
                   }
     }
+
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
   }
 
+  
+  handleClick(e) {
+    
+  }
+  
+  handleSubmit(e) {
+    e.preventDefault();
+    let user = {user: this.state};
+    this.props.processForm(user);
+  }
+  
   update(field) {
     return e => {
       this.setState({
@@ -29,16 +41,9 @@ class SessionForm extends React.Component {
     };
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    let user = {user: this.state};
-    this.props.processForm(user);
-  }
-
   demoLogin(e) {
     e.preventDefault();
     let user = { username: "demo", password: "password"};
-    // this.props.processForm({user: user});
     let username = user["username"].split('');
     let password = user["password"].split('');
 
@@ -61,6 +66,7 @@ class SessionForm extends React.Component {
       if(i === password.length) {
         clearTimeout(uVar);
         this.props.processForm({user: this.state});
+        this.props.closeModal();
       }
     }, 175);
   }
@@ -91,7 +97,6 @@ class SessionForm extends React.Component {
             <button type="submit" onClick={this.handleSubmit}>Log In</button>
             <button onClick={this.demoLogin}>Demo</button>
           </div>
-          <Link to="/signup">don't have a profile?</Link>
         </form>
     );
   }
@@ -136,7 +141,6 @@ class SessionForm extends React.Component {
 
 
           <button type="submit">Sign Up</button>
-          <Link to="/login">already have a username?</Link>
         </form>
     );
   }
