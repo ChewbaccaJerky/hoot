@@ -4,36 +4,31 @@ import Footer from '../footer/footer';
 import SearchBarContainer from '../searchbar/searchbar_container';
 import Modal from 'react-modal';
 
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)'
+class NavBar extends React.Component {
+  constructor(props) {
+    super(props);
   }
-};
 
-const sessionLinks = () => {
-  return (
-    <div className="session-links">
-      <Link to="/login"><button>Log In</button></Link>
-      <Link to="/signup"><button>Sign Up</button></Link>
-    </div>
-  );
-};
+  sessionLinks() {
+    return (
+      <div className="session-links">
+        <Link to="/login"><button>Log In</button></Link>
+        <Link to="/signup"><button>Sign Up</button></Link>
+      </div>
+    );
+  }
 
-const greeting = (currentUser, logout) => (
-  <div className="session-links">
-    <h2> { currentUser.username } </h2>
-    <button onClick={logout}> Log Out </button>
-  </div>
-);
+  greeting() {
+    return (
+      <div className="session-links">
+        <h2> { this.props.currentUser.username } </h2>
+        <button onClick={this.props.logout}> Log Out </button>
+      </div>
+    );
+  } 
 
-
-const homepage = (currentUser, logout) => {
-  let info = currentUser ? greeting(currentUser, logout) : sessionLinks();
+  homepage() {
+  let info = this.props.currentUser ? this.greeting() : this.sessionLinks();
   return (
     <div className="jumbotron">
       <div className="jumbotron-items" >
@@ -49,38 +44,34 @@ const homepage = (currentUser, logout) => {
       </div>
     </div>
   );
-};
+}
 
-const businessPages = (currentUser, logout) => {
-  let info = currentUser ? greeting(currentUser, logout) : sessionLinks();
+ businessPages() {
+    let info = this.props.currentUser ? this.greeting() : this.sessionLinks();
 
-  return (
-    <div className="navbar">
-      <div className="navbar-top">
-        <Link to="/"><h1 id="logo"> Hoot </h1></Link>
-        <div className="SearchBar">
-          <SearchBarContainer />
+    return (
+      <div className="navbar">
+        <div className="navbar-top">
+          <Link to="/"><h1 id="logo"> Hoot </h1></Link>
+          <div className="SearchBar">
+            <SearchBarContainer />
+          </div>
+          { info }
         </div>
-        { info }
       </div>
-    </div>
-  );
-};
+    );
+  }
 
-/**************************************************/
-/****************** NavBar ************************/
-/**************************************************/
-
-const NavBar = ({currentUser, logout, path}) => {
-
-  let content = path === "/" ? homepage(currentUser, logout) : businessPages(currentUser, logout);
+  render() {
+    let content = this.props.path === "/" ? this.homepage() : this.businessPages();
   
-  return (
-    <div className="navbar-container">
-      { content }
-    </div>
-  );
-};
+    return (
+      <div className="navbar-container">
+        { content }
+      </div>
+    );
+  }
+}
 
 export default NavBar;
 
