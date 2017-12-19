@@ -48,11 +48,6 @@
 }
 
 .business-search {
-  // border-bottom: 1px solid #E8E8E8;
-  // box-shadow: 1px 1px 2px #E8E8E8;
-  // &:hover {
-  //   box-shadow: 1px 1px 2px $primary-color;
-  // }
 
   label {
     border-bottom: 1px solid transparent;
@@ -68,16 +63,17 @@
   }
 
   .btn {
+    padding: 0.9em;
     text-transform: uppercase;
     border: 1px solid transparent;
     border-radius: 0;
     background-color: none;
     color: $primary-color;
-    // font-weight: bold;
+    font-weight: bold;
     &:hover {
       background-color: #FFF;
       color: $primary-color;
-      border: 2px solid $primary-color;
+      border-bottom: 1px solid $primary-color;
     }
   }
 }
