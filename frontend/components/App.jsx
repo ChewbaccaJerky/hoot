@@ -25,8 +25,6 @@ const App = () => (
         <Route path="/search" component={BusinessSearchContainer} />
       </Switch>
     </div>
-
-    
   </div>
 );
 

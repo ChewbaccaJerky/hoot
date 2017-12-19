@@ -70,7 +70,7 @@ class NavBar extends React.Component {
       <div className="navbar">
         <div className="navbar-top">
           <Link to="/"><h1 id="logo"> Hoot </h1></Link>
-          <div className="SearchBar">
+          <div className="SearchBar business-search">
             <SearchBarContainer />
           </div>
           { info }

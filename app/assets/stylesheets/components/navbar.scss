@@ -59,7 +59,7 @@
       align-items: center;
 
       #logo {
-        font-size: 3em;
+        font-size: 2em;
         font-weight: bold;
         color: #FFF;
         text-shadow: 2px 2px 5px #888;
@@ -75,19 +75,20 @@
 // Detail Page and Index Page
 .navbar {
   .navbar-top {
-    background-color: $primary-color;
-    color: #FFF;
+    background-color: #FFF;
+    // color: #000;
     height: 5vh;
     padding: 1em;
     display: flex;
     justify-content: space-around;
     align-items: center;
     border-bottom: 1px solid #E8E8E8;
+    // box-shadow: 1px 1px 2px #E8E8E8;
     #logo {
       font-size: 1.5em;
       font-weight: bold;
-      color: #FFF;
-      text-shadow: 1px 1px 3px #888;
+      color: $primary-color;
+      text-shadow: 1px 1px 1px #888;
     }
 
     button {
@@ -96,13 +97,14 @@
       font-size: 15px;
 
       background-color: transparent;
-      color: #FFF;
+      color: #000;
+      // color: $primary-color;
       // border-radius: 5px;
-
-      transition: background-color 1s, color 1s;
+      border: 2px solid transparent;
+      transition: all 0.5s;
 
       &:hover {
-        background-color: #FFF;
+        // border: 2px solid $primary-color;
         color: $primary-color;
       }
     }
@@ -116,33 +118,8 @@
       h2 {
         font-size: 1.5em;
         font-weight: bold;
-        color: #FFF;
+        color: $primary-color;
       }
     }
   }
-
-  // .navbar-bottom {
-  //   background-color: $primary-color;
-  //   padding: 0 10vw;
-  //   ul {
-  //     display: flex;
-  //     justify-content: flex-start;
-  //
-  //     li {
-  //       padding: 0 1em;
-  //       transition: background-color 1s;
-  //       a {
-  //         color: #FFF;
-  //       }
-  //
-  //       &:hover {
-  //         background-color: #FFF;
-  //
-  //         a {
-  //           color: $primary-color;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
 }
