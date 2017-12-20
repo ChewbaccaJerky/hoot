@@ -78,6 +78,8 @@
   }
 }
 
+
+/* Home Page Mobile Version*/
 @media only screen and (max-width: 500px) {
   .searchbar {
     flex-direction: column;
@@ -105,6 +107,47 @@
       border-radius: 0.5em;
       width: 96vw;
       border-left: 2px solid $primary-color;
+      color: #FFF;
+    }
+  }
+}
+
+/* Business Page Mobile Version */
+@media only screen and (max-width: 500px) {
+  .business-search {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 1s;
+    label {
+      width: 90vw;
+      margin: 0.5em 0;
+      border-bottom: 1px solid $primary-color;
+      border-radius: 0px;
+      input:not(.btn) {
+        padding-left: 0.25em;
+        font-size: 1em;
+        width: 70vw;
+      }
+
+    }
+
+    .find {
+      border-radius: 0px;
+      border-right: none;
+    }
+
+    .btn {
+      font-size: 1em;
+      font-weight:bold;
+      border-radius: 0.5em;
+      width: 96vw;
+      border: 1px solid $primary-color;
+      color: $primary-color
+    }
+
+    .btn:hover {
+      background-color: $primary-color;
       color: #FFF;
     }
   }

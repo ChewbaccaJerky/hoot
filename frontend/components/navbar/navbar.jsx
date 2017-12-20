@@ -15,6 +15,7 @@ class NavBar extends React.Component {
     };
 
     this.handleClick = this.handleClick.bind(this);
+    this.handleMenuClick = this.handleMenuClick.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.modal = this.modal.bind(this);
   }
@@ -24,6 +25,21 @@ class NavBar extends React.Component {
       isModalOpen: true,
       form: e.target.textContent
     });
+  }
+
+  handleMenuClick(e) {
+    const links = document.querySelector('.session-links');
+    const searchbar = document.querySelector('.business-search');
+
+    if(links.style.display === "") {
+      links.style.display = "flex";
+      searchbar.style.display = "flex";
+    }
+    else {
+      links.style.display = "";
+      searchbar.style.display = "";
+    }
+    
   }
 
   sessionLinks() {
@@ -69,7 +85,13 @@ class NavBar extends React.Component {
     return (
       <div className="navbar">
         <div className="navbar-top">
-          <Link to="/"><h1 id="logo"> Hoot </h1></Link>
+          <div className="icon-container">
+            <Link to="/"><h1 id="logo"> Hoot </h1></Link>
+            <img 
+              onClick={this.handleMenuClick}
+              className="menu-icon" 
+              src="https://blog.trymyui.com/wp-content/uploads/2016/01/Hamburger-Menu-icon.png" />
+          </div>
           <div className="SearchBar business-search">
             <SearchBarContainer />
           </div>

@@ -90,6 +90,9 @@
       color: $primary-color;
       text-shadow: 1px 1px 1px #888;
     }
+    .menu-icon {
+      display: none;
+    }
 
     button {
       margin: 0 0.5em;
@@ -114,12 +117,6 @@
       justify-content: space-between;
       flex-direction: row;
       align-items: center;
-
-      h2 {
-        font-size: 1.5em;
-        font-weight: bold;
-        color: $primary-color;
-      }
     }
   }
 }
@@ -127,6 +124,37 @@
 
 @media only screen and (max-width: 500px) {
   .navbar {
-    visibility: hidden;
+    .navbar-top {
+      flex-direction: column;
+      justify-content: space-between;
+      height: auto;
+      .icon-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        #logo {
+
+        }
+        .menu-icon {
+          display: flex;
+          height: 15px;
+          width: 15px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      button {
+         color: $primary-color;
+      }
+
+      .session-links {
+        display: none;
+        width: 100%;
+        justify-content: flex-end;
+        transition: all 1s;
+      }
+    }
   }
 }
