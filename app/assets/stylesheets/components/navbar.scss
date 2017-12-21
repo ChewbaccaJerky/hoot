@@ -2,7 +2,6 @@
 
 // HomePage
 .navbar-container {
-  // margin-bottom: 2em;
   display: flex;
   flex-direction: column;
   .jumbotron {
@@ -78,7 +77,7 @@
     background-color: #FFF;
     // color: #000;
     height: 5vh;
-    padding: 1em;
+    padding: 0.4em;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -125,6 +124,7 @@
 @media only screen and (max-width: 500px) {
   .navbar {
     .navbar-top {
+      width: 93vw;
       flex-direction: column;
       justify-content: space-between;
       height: auto;

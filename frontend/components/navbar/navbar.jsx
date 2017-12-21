@@ -30,14 +30,18 @@ class NavBar extends React.Component {
   handleMenuClick(e) {
     const links = document.querySelector('.session-links');
     const searchbar = document.querySelector('.business-search');
-
+    const navbar = document.querySelector('.navbar-top');
     if(links.style.display === "") {
       links.style.display = "flex";
       searchbar.style.display = "flex";
+      navbar.style.position = "absolute";
+      navbar.style.zIndex = "1";
     }
     else {
       links.style.display = "";
       searchbar.style.display = "";
+      navbar.style.position = "";
+      navbar.style.zIndex = "";
     }
     
   }
