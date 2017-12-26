@@ -1,6 +1,7 @@
 @import "./variables";
 
 .form-container {
+  z-index: 2;
   height: auto;
   width: 40vw;
   display: flex;

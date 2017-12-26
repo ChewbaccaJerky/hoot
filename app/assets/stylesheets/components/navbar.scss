@@ -124,9 +124,11 @@
 @media only screen and (max-width: 500px) {
   .navbar {
     .navbar-top {
-      width: 93vw;
+      z-index: 1;
+      width: 97vw;
       flex-direction: column;
       justify-content: space-between;
+      align-items: center;
       height: auto;
       .icon-container {
         display: flex;
