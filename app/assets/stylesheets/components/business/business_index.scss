@@ -9,7 +9,7 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-
+    // background-color: #EEE;
     .business-item {
       background-color: #FFF;
       box-shadow: 1px 1px 3px #888;
@@ -35,6 +35,42 @@
           h1 {
             color: #000;
             font-size: 2em;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .business-index-container {
+    width: 100vw;
+
+    .business-index {
+      padding: 0;
+      height: 100vh;
+      background-color: #EEE;
+      .business-item {
+        height: 40vh;
+        margin: 0.5em 0.25em;
+        a {
+          flex-direction: column;
+          justify-content: center;
+          .img-container {
+            overflow: hidden;
+            height: 40vw;
+            img {
+              width: 100vw;
+            }
+          }
+
+          .business-item-info {
+            h1 {
+              font-size: 1em;
+            }
+            h2 {
+              font-size: 0.9em;
+            }
           }
         }
       }
