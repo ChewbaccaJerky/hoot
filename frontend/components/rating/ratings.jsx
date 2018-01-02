@@ -9,6 +9,7 @@ const Rating = (props) => {
       );
     }
   }
+  
   return (
     <div className="ratings-container">
       <div className="ratings">
