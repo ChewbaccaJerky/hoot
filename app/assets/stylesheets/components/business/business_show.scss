@@ -1,6 +1,7 @@
 @import "../variables.scss";
 
 .business-show-container {
+  margin: 0.1em 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,7 +29,7 @@
 
       h1{
         color: #000;
-        font-size: 2.5em;
+        font-size: 2.2em;
         font-weight: bold;
         text-shadow: 1px 1px 2px #888;
       }
@@ -50,7 +51,7 @@
 
   .features-container {
     display: flex;
-    background-color: #FFFFFF;
+    background-color: #FEFEFE;
     align-items: center;
     padding: 1em 5em;
   }

@@ -12,11 +12,11 @@ class Api::SearchesController < ApplicationController
 
     @businesses = JSON.parse(response)["results"]
     # add rating to each business
-    @businesses.map! do |business|
-      ratings = Review.where('place_id' => business['place_id']).average(:ratings)
-      business["ratings"] = if ratings.nil? then 5 else ratings.to_f end
-      business
-    end
+    # @businesses.map! do |business|
+    #   ratings = Review.where('place_id' => business['place_id']).average(:ratings)
+    #   business["ratings"] = if ratings.nil? then 5 else ratings.to_f end
+    #   business
+    # end
     render '/api/searches/search.json.jbuilder'
   end
 end

@@ -30,14 +30,14 @@ const BusinessCard = (props) => {
         </div>
         <div>
           <i className="material-icons">web</i>
-          <span><a href={props.biz.website}>{props.biz.website}</a></span>
+          <span><a href={props.biz.website}>{props.biz.name}</a></span>
         </div>
         <div>
           <i className="material-icons">attach_money</i>
           <span className="price">{price}</span>
         </div>
         <div>
-          <i className="material-icons">attach_money</i>
+          <i className="material-icons">home</i>
           {open}
         </div>
       </div>

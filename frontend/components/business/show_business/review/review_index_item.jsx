@@ -24,11 +24,12 @@ class ReviewIndexItem extends React.Component {
            <h1>{review.author.username ? review.author.username : ""}</h1>
          </div>
          <div className="ratings-body">
-           <div>
-             <Ratings ratings={review.ratings ? review.ratings : 5} />
-             { content }
-           </div>
-           <p>{review.body}</p>
+               <div>
+               <Ratings ratings={review.ratings ? review.ratings : 5} />
+               { content }
+               </div>
+               
+               <p>{review.body}</p>  
          </div>
        </li>
     );

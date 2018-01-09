@@ -47,14 +47,3 @@ class ReviewForm extends React.Component {
 }
 
 export default ReviewForm;
-
-
-
-//
-// <ReactStars
-// className="ratings"
-// count={5}
-// color2={"#f8cc14"}
-// size={25}
-// onChange={this.newRating}
-// />

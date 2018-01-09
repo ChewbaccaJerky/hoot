@@ -84,7 +84,6 @@ class BusinessShow extends React.Component {
 
         <div className="review-and-biz-container">
           <ReviewIndexContainer/>
-          <BusinessInfo biz={biz}/>
         </div>
 
         <Modal
