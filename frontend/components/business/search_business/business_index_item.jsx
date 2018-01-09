@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom';
 const BusinesIndexItem = (props) => {
   let biz = props.biz;
   let image_key = props.image_key;
-  // console.log(props);
+  
   let url = "https://maps.googleapis.com/maps/api/place/photo?";
-  console.log(biz.ratings);
   return (
     <li className="business-item">
       <Link to={`/businesses/${biz.place_id}`}>

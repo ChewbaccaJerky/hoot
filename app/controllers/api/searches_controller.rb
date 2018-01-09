@@ -17,7 +17,6 @@ class Api::SearchesController < ApplicationController
       business["ratings"] = if ratings.nil? then 5 else ratings.to_f end
       business
     end
-    # render json: response
     render '/api/searches/search.json.jbuilder'
   end
 end
