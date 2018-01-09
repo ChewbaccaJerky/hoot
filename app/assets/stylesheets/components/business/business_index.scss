@@ -11,12 +11,12 @@
     flex-direction: column;
     // background-color: #EEE;
     .business-item {
+      margin: 0.3em 0;
       background-color: #FFF;
       box-shadow: 1px 1px 3px #888;
 
       a {
         display: flex;
-
         .img-container {
           height: 100%;
           // width: 20em;

@@ -1,18 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+@media only screen and (max-width: 500px) {
+  html, body {
+    min-height: none;
+  }
+
+  .main-page {
+    height: 100%;
+    overflow: scroll;
+  }
+}
 
 html, body {
   padding: 0;
   margin: 0;
   min-height: 100vh;
   background-color: #eee;
-  // overflow: hidden;
+  overflow: hidden;
 }
 
-// .main-page {
-//   // height: 100vh;
-// }
+.main-page {
+  height: 100vh;
+}
 
 [data-reactroot] {
   height: 100%;

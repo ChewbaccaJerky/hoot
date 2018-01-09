@@ -58,3 +58,15 @@
     }
   }
 }
+
+@media only screen and (max-width: 500px) {
+    .business-card {
+      height: 100%;
+      width: 97vw;
+      margin: 0;
+
+      .map-container {
+        display: none;
+      }
+    }
+}

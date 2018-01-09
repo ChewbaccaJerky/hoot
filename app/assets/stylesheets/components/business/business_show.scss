@@ -56,3 +56,19 @@
     padding: 1em 5em;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .business-show-container {
+
+    .business-show-header {
+      justify-content: space-between;
+      padding: 1em;
+    }
+
+    .features-container {
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

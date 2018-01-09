@@ -68,3 +68,26 @@
     }
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .review-and-biz-container {
+    width: 100%;
+    padding: 0.2em;
+
+    .review-index-container {
+      overflow-y: none;
+      height: 100%;
+
+      .review-index-item {
+        margin: 0;
+
+        .avatar {
+          img {
+            width: 10vh;
+            height: 10vh;
+          }
+        }
+      }
+    }
+  }
+}

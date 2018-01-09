@@ -10,7 +10,7 @@ const BusinesIndexItem = (props) => {
     <li className="business-item">
       <Link to={`/businesses/${biz.place_id}`}>
         <div className="img-container">
-        <img src={`${url}maxwidth=300&maxheight=300&photoreference=${biz.photo_reference}&key=${image_key}`} />
+          <img src={`${url}maxwidth=300&maxheight=300&photoreference=${biz.photo_reference}&key=${image_key}`} />
         </div>
         <div className="business-item-info">
         <h1>{biz.name}</h1>
