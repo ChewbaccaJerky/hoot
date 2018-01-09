@@ -5,6 +5,7 @@
     json.location business["geometry"]["location"]
     json.place_id business["place_id"]
     json.types    business["types"]
+    json.ratings  business["ratings"]
     if business["photos"]
       json.photo_reference business["photos"][0]["photo_reference"]
     end

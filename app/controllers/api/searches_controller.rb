@@ -4,7 +4,6 @@ class Api::SearchesController < ApplicationController
   def search
     searchParams = params[:searchParams]
     searchParams = searchParams.split('+').join(' ')
-    puts searchParams
 
     url = "https://maps.googleapis.com/maps/api/place/textsearch/json?"
 
@@ -12,9 +11,14 @@ class Api::SearchesController < ApplicationController
                                               query: searchParams}}
 
     @businesses = JSON.parse(response)["results"]
+    # add rating to each business
+    @businesses.map! do |business|
+      ratings = Review.where('place_id' => business['place_id']).average(:ratings)
+      business["ratings"] = if ratings.nil? then 5 else ratings.to_f end
+      puts business
+      business
+    end
     # render json: response
     render '/api/searches/search.json.jbuilder'
   end
-
-
 end
