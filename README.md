@@ -19,6 +19,7 @@
 
 ## Cross Platform Compatiblity
 ![Desktop to Mobile](https://res.cloudinary.com/johnrobin/image/upload/v1520753288/giphy_qj3nr7.gif)
+
 ![Mobile to Desktop](https://res.cloudinary.com/johnrobin/image/upload/v1520753548/giphy_1_rgy2sb.gif)
 
 ## Business Page
