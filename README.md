@@ -49,7 +49,7 @@ end
 Hoot is using a server-side http call to retrieve information of a business then serving it to the React frontend while following a redux cycle.
 
 ## Maps And Search
-![Maps and Search](./screenshots/SFSearch.png)
+![Maps and Search](https://res.cloudinary.com/johnrobin/image/upload/v1520754006/Screen_Shot_2018-03-10_at_11.39.38_PM_fr7n27.png)
 
 ### Google Places API Integration
 
