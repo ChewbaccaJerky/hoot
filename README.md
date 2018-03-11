@@ -18,7 +18,7 @@
     + Renders markers of locations with `Google Maps API`.
 
 ## Cross Platform Compatiblity
-![Desktop to Mobile](https://res.cloudinary.com/johnrobin/image/upload/v1520754551/homepage_mv7v2t.gif)
+![Mobile](https://res.cloudinary.com/johnrobin/image/upload/v1520754551/homepage_mv7v2t.gif)
 
 <!-- ![Mobile to Desktop](https://res.cloudinary.com/johnrobin/image/upload/c_scale,w_320/v1520753548/giphy_1_rgy2sb.gif) -->
 
