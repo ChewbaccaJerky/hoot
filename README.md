@@ -1,11 +1,13 @@
 # Hoot
-![Home Page](https://media.giphy.com/media/lzKCMLGVjIuu7t6GFd/giphy.gif)
+![Home Page](https://res.cloudinary.com/johnrobin/image/upload/v1520753911/Screen_Shot_2018-03-10_at_11.37.57_PM_ilyy5k.png)
 
 [__Hoot__](https://hoots.herokuapp.com/), a Yelp clone, is an application which helps people find great local businesses and places where users can rate and write reviews based on their experiences. It utilizes `Ruby on Rails, React/Redux, PostgreSQL, Google Places API, and Google Maps API`.
 
 ![New Businesses](./screenshots/NewBizPage.png)
 
 ## Features
+  + Cross Platform Compatibility
+    + Utilizing responsive design and CSS3, the application is both mobile and desktop compatible.
   + Business
     + Using `Google Places API`, the app is populated with data of actual businesses and locations.
   + Reviews
@@ -15,9 +17,13 @@
   + Map
     + Renders markers of locations with `Google Maps API`.
 
+## Cross Platform Compatiblity
+![Desktop to Mobile](https://res.cloudinary.com/johnrobin/image/upload/v1520753288/giphy_qj3nr7.gif)
+![Mobile to Desktop](https://res.cloudinary.com/johnrobin/image/upload/v1520753548/giphy_1_rgy2sb.gif)
+
 ## Business Page
 
-![Business Page](https://media.giphy.com/media/dgxynaKU6gRpav8KPE/giphy.gif)
+![Business Page](./screenshots/BizPage.png)
   Populated with `Googles Places API` which renders all the information into the components. The data displayed are current and real time information of the businesses.
 
 ```
