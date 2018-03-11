@@ -6,7 +6,7 @@
 ![New Businesses](./screenshots/NewBizPage.png)
 
 ## Features
-  + Cross Platform Compatibility
+  + Cross-Platform Compatibility
     + Utilizing responsive design and CSS3, the application is both mobile and desktop compatible.
   + Business
     + Using `Google Places API`, the app is populated with data of actual businesses and locations.
@@ -17,10 +17,12 @@
   + Map
     + Renders markers of locations with `Google Maps API`.
 
-## Cross Platform Compatiblity
+## Cross-Platform Compatiblity
 
 ![Desktop to Mobile](./screenshots/hootHomePage.gif)
   
+Utilzing responsive design Hoot is usable for mobile, tablet and desktop. All components are easily scaled to the proper devices using CSS3(media-queries and grid layouts).
+
 ## Business Page
 
 ![Business Page](./screenshots/BizPage.png)
