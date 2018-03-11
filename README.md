@@ -18,11 +18,9 @@
     + Renders markers of locations with `Google Maps API`.
 
 ## Cross Platform Compatiblity
-<img src="https://res.cloudinary.com/johnrobin/image/upload/v1520754551/homepage_mv7v2t.gif" />
 
-
-<!-- ![Mobile to Desktop](https://res.cloudinary.com/johnrobin/image/upload/c_scale,w_320/v1520753548/giphy_1_rgy2sb.gif) -->
-
+![Desktop to Mobile](./screenshots/hootHomePage.gif)
+  
 ## Business Page
 
 ![Business Page](./screenshots/BizPage.png)
@@ -54,7 +52,7 @@ Hoot is using a server-side http call to retrieve information of a business then
 
 ### Google Places API Integration
 
-  The backend is using the http call to retrieve the information with regards to the search params, then served to the front end to be displaced in an index component. Hoot gives the accessibility to it's users to make searches for any businesses or locations they can think of. New places are right around the corner to be discovered.
+  The backend is using server side http to retrieve the information with regards to the search params, then served to the frontend to be displayed in an index component. Hoot gives the accessibility to it's users to make searches for any locations of their interest. New places are right around the corner to be discovered.
 
 ![Search Tokyo](./screenshots/TokyoSearch.png)
 
