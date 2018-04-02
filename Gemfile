@@ -31,17 +31,21 @@ gem 'jquery-rails'
 gem 'rest-client'
 gem 'figaro'
 
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'web-console', '>= 3.3.0', group: :development
+
 group :development, :test do
+  gem "rspec-rails"
+  gem 'rspec_junit_formatter'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   # Adds support for Capybara system testing and selenium driver
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # gem 'capybara', '~> 2.13'
   # gem 'selenium-webdriver'
   gem 'pry-rails'
-  gem 'web-console', '>= 3.3.0'
   gem 'spring'
 end
 
