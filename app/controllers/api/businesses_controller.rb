@@ -35,7 +35,6 @@ class Api::BusinessesController < ApplicationController
       ratings = Review.where('place_id' => @business["place_id"]).average(:ratings)
       @business["ratings"] = if ratings.nil? then 5 else ratings.to_f end
       render '/api/businesses/show'
-      # render json: @business
     end
   end
 end
