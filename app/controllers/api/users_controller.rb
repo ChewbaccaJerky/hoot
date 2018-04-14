@@ -10,6 +10,8 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  # def show/:user_id
+
   private
 
   def user_params

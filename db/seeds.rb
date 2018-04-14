@@ -13,7 +13,8 @@ john = {
   password: "password",
   email: "johnrobinlugtu@gmail.com",
   first_name: "John",
-  last_name: "Lugtu"
+  last_name: "Lugtu",
+  bio: "My goal in life is to keep my palette satisfied and content."
 }
 
 diane = {
@@ -21,7 +22,8 @@ diane = {
   password: "password",
   email: "dianemariel28@gmail.com",
   first_name: "Diane",
-  last_name: "Custodio"
+  last_name: "Custodio",
+  bio: "Food is life!"
 }
 
 jay = {
@@ -29,7 +31,8 @@ jay = {
   password: "password",
   email: "jayjay@gmail.com",
   first_name: "Amerlito",
-  last_name: "Reyes"
+  last_name: "Reyes",
+  bio: "I'm a local Bay Area Food vlogger!"
 }
 
 lie = {
