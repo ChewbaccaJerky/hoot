@@ -22,7 +22,7 @@ const App = () => (
     <div className="main-page">
       <Switch>
         <Route path="/businesses/:biz_id" component={ShowBusinessContainer} />
-        <Route path="/search" component={BusinessSearchContainer} />
+        <Route path="/search/:search_params" component={BusinessSearchContainer} />
       </Switch>
     </div>
   </div>

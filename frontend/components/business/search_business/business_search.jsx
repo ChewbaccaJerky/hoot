@@ -18,13 +18,17 @@ const defaultBusiness = {
 "political"
 ],
 "photo_reference": "CmRaAAAAR9lo0mwVQ7MltRPjjiZWUKc3pPMDvhAf8ix-Z0eAaYK3vW5NRefoD54_gWhx94_IQJTc9sZ-Lzg3F3MrvAUeLDhh4_p0g_SMZgh7NRvxdXwlc_sISGZBRdf6tVr1WZ9EEhCvbG9zVWK0CqwsNGiHZjiEGhQKJN3lPCZoQd5E-s7cNeV_BYAhVw"
-}}
+}};
 
 class BusinessSearch extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = defaultBusiness;
+  }
+
+  componentWillMount() {
+    this.props.searchAndFetchBusinesses(this.props.searchParams);
   }
 
   render() {

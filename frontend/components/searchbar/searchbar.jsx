@@ -11,7 +11,7 @@ class SearchBar extends React.Component {
 
   update(field) {
     return e => {
-      this.setState({[field]: e.target.value})
+      this.setState({[field]: e.target.value});
     };
   }
 
@@ -29,11 +29,12 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    let searchParams = `${this.state.find} ${this.state.near}`;
-    searchParams = searchParams.split(' ').join('+');
-
+    
     if(this.state.redirect_to) {
-      return (<Redirect to='/search'/>);
+      let searchParams = `${this.state.find} ${this.state.near}`;
+      this.props.searchAndFetchBusinesses(searchParams);
+      searchParams = searchParams.split(' ').join('+');
+      return (<Redirect to={`/search/${searchParams}`}/>);
     }
 
     return(

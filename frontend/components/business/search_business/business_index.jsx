@@ -4,13 +4,9 @@ import Loading from '../../spinner/spinner';
 
 class BusinessIndex extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = props.businesses;
   }
-
-  // componentDidMount(){
-  //   this.props.fetchBusinesses();
-  // }
 
   render() {
     let businesses = Object.values(this.props.businesses);
