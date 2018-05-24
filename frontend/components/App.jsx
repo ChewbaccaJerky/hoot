@@ -8,7 +8,6 @@ import NewBusinessIndexContainer from './business/new_business/new_business_inde
 import ShowBusinessContainer from     './business/show_business/business_show_container';
 import SessionFormContainer from './session_form/session_form_container';
 import BusinessSearchContainer from './business/search_business/business_search_container';
-import Footer from './footer/footer';
 import Profile from './profile/index';
 
 const App = () => (
@@ -28,7 +27,4 @@ const App = () => (
   </div>
 );
 
-
-// <Route exact path="/" component={NewBusinessIndexContainer}/>
-// <Route exact path='/' component={Footer} />
 export default App;
