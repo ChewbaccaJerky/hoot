@@ -18,4 +18,8 @@ const mapDispatchToProps = dispatch => ({
   fetchBusinesses: () => dispatch(fetchBusinesses())
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BusinessSearch));
+export default withRouter(
+  connect(
+    mapStateToProps, 
+    mapDispatchToProps)
+  (BusinessSearch));
